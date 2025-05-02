@@ -1,12 +1,15 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send, Linkedin, Github, Download } from "lucide-react"
+import { Mail, Phone, MapPin, Send, Linkedin, Github, Download, AlertCircle, CheckCircle2 } from "lucide-react"
+import { useActionState } from "react" // Updated import
+import { sendEmail, type FormState } from "@/app/actions/send-email"
+import { Alert, AlertDescription } from "@/components/ui/alert"
 
 export default function Contact() {
   const [ref, inView] = useInView({
@@ -14,44 +17,20 @@ export default function Contact() {
     threshold: 0.1,
   })
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
-
+  const initialState: FormState = {}
+  const [state, formAction] = useActionState(sendEmail, initialState) // Updated to useActionState
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitSuccess, setSubmitSuccess] = useState(false)
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
-  }
+  // Reset isSubmitting when form submission completes
+  useEffect(() => {
+    if (state?.success || state?.errors) {
+      setIsSubmitting(false)
+    }
+  }, [state?.success, state?.errors])
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  const handleSubmit = async (formData: FormData) => {
     setIsSubmitting(true)
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    setIsSubmitting(false)
-    setSubmitSuccess(true)
-
-    // Reset form after success
-    setTimeout(() => {
-      setSubmitSuccess(false)
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      })
-    }, 3000)
+    // The actual submission is handled by the formAction
   }
 
   const containerVariants = {
@@ -179,7 +158,21 @@ export default function Contact() {
               Send Me a Message
             </motion.h3>
 
-            <form onSubmit={handleSubmit}>
+            {state?.success && (
+              <Alert className="mb-6 bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800">
+                <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400" />
+                <AlertDescription className="text-green-700 dark:text-green-300">{state.message}</AlertDescription>
+              </Alert>
+            )}
+
+            {state?.errors?._form && (
+              <Alert className="mb-6 bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800">
+                <AlertCircle className="h-4 w-4 text-red-600 dark:text-red-400" />
+                <AlertDescription className="text-red-700 dark:text-red-300">{state.errors._form}</AlertDescription>
+              </Alert>
+            )}
+
+            <form action={formAction} onSubmit={handleSubmit}>
               <motion.div variants={itemVariants} className="mb-4">
                 <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
                   Your Name
@@ -187,12 +180,13 @@ export default function Contact() {
                 <Input
                   id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
                   placeholder="John Doe"
                   required
-                  className="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600"
+                  className={`bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600 ${
+                    state?.errors?.name ? "border-red-500 dark:border-red-500" : ""
+                  }`}
                 />
+                {state?.errors?.name && <p className="text-red-500 text-sm mt-1">{state.errors.name[0]}</p>}
               </motion.div>
 
               <motion.div variants={itemVariants} className="mb-4">
@@ -203,12 +197,13 @@ export default function Contact() {
                   id="email"
                   name="email"
                   type="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   placeholder="john@example.com"
                   required
-                  className="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600"
+                  className={`bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600 ${
+                    state?.errors?.email ? "border-red-500 dark:border-red-500" : ""
+                  }`}
                 />
+                {state?.errors?.email && <p className="text-red-500 text-sm mt-1">{state.errors.email[0]}</p>}
               </motion.div>
 
               <motion.div variants={itemVariants} className="mb-4">
@@ -218,12 +213,13 @@ export default function Contact() {
                 <Input
                   id="subject"
                   name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
                   placeholder="Project Inquiry"
                   required
-                  className="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600"
+                  className={`bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600 ${
+                    state?.errors?.subject ? "border-red-500 dark:border-red-500" : ""
+                  }`}
                 />
+                {state?.errors?.subject && <p className="text-red-500 text-sm mt-1">{state.errors.subject[0]}</p>}
               </motion.div>
 
               <motion.div variants={itemVariants} className="mb-6">
@@ -233,20 +229,21 @@ export default function Contact() {
                 <Textarea
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   placeholder="Your message here..."
                   rows={5}
                   required
-                  className="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600"
+                  className={`bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-600 ${
+                    state?.errors?.message ? "border-red-500 dark:border-red-500" : ""
+                  }`}
                 />
+                {state?.errors?.message && <p className="text-red-500 text-sm mt-1">{state.errors.message[0]}</p>}
               </motion.div>
 
               <motion.div variants={itemVariants}>
                 <Button
                   type="submit"
                   className="w-full bg-teal-500 hover:bg-teal-600 text-white"
-                  disabled={isSubmitting}
+                  disabled={state?.success || isSubmitting}
                 >
                   {isSubmitting ? (
                     <span className="flex items-center">
@@ -272,8 +269,10 @@ export default function Contact() {
                       </svg>
                       Sending...
                     </span>
-                  ) : submitSuccess ? (
-                    <span className="flex items-center">Message Sent Successfully!</span>
+                  ) : state?.success ? (
+                    <span className="flex items-center">
+                      <CheckCircle2 className="mr-2 h-4 w-4" /> Message Sent!
+                    </span>
                   ) : (
                     <span className="flex items-center">
                       <Send className="mr-2 h-4 w-4" /> Send Message
