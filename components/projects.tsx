@@ -109,7 +109,7 @@ export default function Projects() {
       technologies: ["React JS", "Square API"],
       role: "Frontend Developer",
       details: "Integrated Square Point APIs to enhance the functionality of a restaurant management system. Implemented features like payment processing, inventory management, and sales reporting. The system provides real-time sales analytics, employee management, and customer relationship tools specifically designed for BBQ restaurants.",
-      link: "https://janebondbbq.com/",
+      link: "#",
     },
     {
       id: 6,
