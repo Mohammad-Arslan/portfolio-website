@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Linkedin, Github, Mail, Phone, ChevronUp } from "lucide-react"
+import { motion } from "framer-motion";
+import { Linkedin, Github, Mail, Phone, ChevronUp } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-    })
-  }
+    });
+  };
 
   return (
     <footer className="bg-slate-900 text-white">
@@ -18,7 +18,8 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Mohammad Arslan</h3>
             <p className="text-slate-400 mb-4">
-              Senior Software Engineer specializing in web development with PHP, Laravel, React, and Next.js.
+              Senior Software Engineer specializing in web development with PHP,
+              Laravel, React, and Next.js.
             </p>
             <div className="flex space-x-4">
               <a
@@ -37,7 +38,10 @@ export default function Footer() {
               >
                 <Github className="h-5 w-5" />
               </a>
-              <a href="mailto:shanitoor73@gmail.com" className="text-slate-400 hover:text-teal-400 transition-colors">
+              <a
+                href="mailto:shanitoor73@gmail.com"
+                className="text-slate-400 hover:text-teal-400 transition-colors"
+              >
                 <Mail className="h-5 w-5" />
               </a>
             </div>
@@ -47,27 +51,58 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#about" className="text-slate-400 hover:text-teal-400 transition-colors">
+                <a
+                  href="#about"
+                  className="text-slate-400 hover:text-teal-400 transition-colors"
+                >
                   About
                 </a>
               </li>
               <li>
-                <a href="#experience" className="text-slate-400 hover:text-teal-400 transition-colors">
+                <a
+                  href="#experience"
+                  className="text-slate-400 hover:text-teal-400 transition-colors"
+                >
                   Experience
                 </a>
               </li>
               <li>
-                <a href="#skills" className="text-slate-400 hover:text-teal-400 transition-colors">
+                <a
+                  href="#skills"
+                  className="text-slate-400 hover:text-teal-400 transition-colors"
+                >
                   Skills
                 </a>
               </li>
               <li>
-                <a href="#projects" className="text-slate-400 hover:text-teal-400 transition-colors">
+                <a
+                  href="#projects"
+                  className="text-slate-400 hover:text-teal-400 transition-colors"
+                >
                   Projects
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-slate-400 hover:text-teal-400 transition-colors">
+                <a
+                  href="#achievements"
+                  className="text-slate-400 hover:text-teal-400 transition-colors"
+                >
+                  Achievements
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#testimonials"
+                  className="text-slate-400 hover:text-teal-400 transition-colors"
+                >
+                  Testimonials
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  className="text-slate-400 hover:text-teal-400 transition-colors"
+                >
                   Contact
                 </a>
               </li>
@@ -91,7 +126,8 @@ export default function Footer() {
 
         <div className="border-t border-slate-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-slate-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Mohammad Arslan. All rights reserved.
+            &copy; {new Date().getFullYear()} Mohammad Arslan. All rights
+            reserved.
           </p>
           <motion.button
             onClick={scrollToTop}
@@ -104,5 +140,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

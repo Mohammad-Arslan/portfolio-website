@@ -42,9 +42,9 @@ export default function About() {
           className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
         >
           <motion.div variants={itemVariants} className="relative">
-            <div className="w-full h-[400px] relative rounded-lg overflow-hidden shadow-xl">
+            <div className="w-full h-[600px] relative rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/mohammad-arslan.png"
+                src="/images/pic.jpg"
                 alt="Mohammad Arslan"
                 fill
                 className="object-cover object-top"
