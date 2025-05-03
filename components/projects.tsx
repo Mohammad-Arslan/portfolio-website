@@ -261,7 +261,7 @@ export default function Projects() {
                   className="object-cover"
                 />
                 <button
-                  className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-2 rounded-full text-white hover:bg-white/40 transition-colors"
+                  className="absolute top-4 right-4 bg-red-500 backdrop-blur-sm p-2 rounded-full text-white hover:bg-red-600 transition-colors"
                   onClick={() => setSelectedProject(null)}
                 >
                   <X className="h-5 w-5" />
