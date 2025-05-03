@@ -95,7 +95,12 @@ export default function About() {
             </div>
 
             <div className="flex space-x-4">
-              <Button className="bg-teal-500 hover:bg-teal-600">
+              <Button className="bg-teal-500 hover:bg-teal-600" onClick={() => {
+                  const contactSelection = document.getElementById("contact")
+                  if (contactSelection) {
+                    contactSelection.scrollIntoView({ behavior: "smooth" })
+                  }
+                }}>
                 <Mail className="mr-2 h-4 w-4" /> Contact Me
               </Button>
               <a href="/files/mohammad-arslan-resume.pdf" download="Mohammad_Arslan_Resume.pdf">

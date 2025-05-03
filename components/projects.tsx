@@ -7,80 +7,123 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ChevronRight, X } from "lucide-react"
 
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  images: string[];
+  technologies: string[];
+  role: string;
+  details: string;
+  link: string;
+}
+
 export default function Projects() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
 
-  const [selectedProject, setSelectedProject] = useState(null)
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  // Replace the projects array with this updated version that uses placeholder images
-  const projects = [
+  const projects: Project[] = [
     {
       id: 1,
       title: "iProsper CRM",
       description: "A comprehensive CRM system with payment integration and third-party service synchronization.",
-      image: "/placeholder.svg?height=400&width=600",
+      images: [
+        "/images/i1.png",
+        "/images/i2.png",
+        "/images/i3.png",
+        "/images/i4.png",
+        "/images/i5.png",
+      ],
       technologies: ["PHP", "Cervo", "React JS", "MySQL"],
       role: "Full Stack Developer",
-      details:
-        "Integrated Stripe and PayPal for seamless transactions, and synchronized data with Google and Microsoft services. Implemented user authentication, role-based access control, and real-time notifications. The system includes contact management, sales pipeline tracking, email integration, and comprehensive reporting dashboards.",
+      details: "Integrated Stripe and PayPal for seamless transactions, and synchronized data with Google and Microsoft services. Implemented user authentication, role-based access control, and real-time notifications. The system includes contact management, sales pipeline tracking, email integration, and comprehensive reporting dashboards.",
       link: "#",
     },
     {
       id: 2,
-      title: "Pet Health Data Website",
-      description: "A platform for veterinary professionals to manage pet health records.",
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Laravel", "MySQL", "JavaScript"],
-      role: "Laravel Developer",
-      details:
-        "Built a comprehensive platform for veterinary doctors and pet owners to manage pet health records and communicate effectively. Implemented features like appointment scheduling, medical record management, and secure messaging. The platform includes vaccination tracking, medication management, and health history visualization for pet owners and veterinarians.",
+      title: "KeyConnect CRM",
+      description: "A CRM system tailored for call center solutions, built with Laravel, Vue.js, MySQL, and Elasticsearch.",
+      images: [
+        "/images/crm1.jpg",
+        "/images/crm2.jpg",
+        "/images/crm3.jpg",
+        "/images/crm4.jpg",
+        "/images/crm5.jpg",
+        "/images/crm6.jpg",
+      ],
+      technologies: ["Laravel", "MySQL", "Ajax", "Blade", "VueJS", "Elasticsearch"],
+      role: "Full Stack Developer",
+      details: "Contributed as a senior full stack developer to the development of a comprehensive CRM system tailored for call center operations. The platform incorporates VoIP and SIP integration to facilitate efficient communication and call handling. Utilized Laravel for building robust backend services, Vue.js and Blade with AJAX for creating responsive and dynamic user interfaces, and Elasticsearch for high-performance real-time search capabilities.",
       link: "#",
     },
     {
       id: 3,
       title: "Ting - Event Management System",
       description: "An event management system with NFC technology integration.",
-      image: "/placeholder.svg?height=400&width=600",
+      images: [
+        "/images/t1.png",
+        "/images/t2.png",
+        "/images/t3.png",
+        "/images/t4.png",
+        "/images/t5.png",
+        "/images/t6.png",
+        "/images/t7.png",
+        "/images/t8.png",
+        "/images/t9.png",
+        "/images/t10.png",
+      ],
       technologies: ["Laravel", "MySQL", "NFC Technology"],
       role: "Backend Developer",
-      details:
-        "Led the development of an event management system integrating NFC technology for seamless attendance tracking and user management. Implemented features like event creation, ticket sales, attendee management, and reporting. The system supports multiple event types, custom registration forms, and real-time analytics for event organizers.",
+      details: "Led the development of an event management system integrating NFC technology for seamless attendance tracking and user management. Implemented features like event creation, ticket sales, attendee management, and reporting. The system supports multiple event types, custom registration forms, and real-time analytics for event organizers.",
       link: "#",
     },
     {
-      id: 4,
-      title: "Restaurant Management System",
-      description: "Online food service module for a restaurant management system.",
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Laravel", "MySQL", "React JS"],
-      role: "Full-Stack Developer",
-      details:
-        "Developed the online food service module, enhancing food ordering and delivery processes. Implemented features like menu management, order processing, payment integration, and delivery tracking. The system includes kitchen display integration, inventory management, and customer loyalty programs to enhance the restaurant operations.",
-      link: "#",
-    },
+      "id": 4,
+      "title": "Capex BNU",
+      "description": "A comprehensive management system developed for Beaconhouse National University and its affiliated schools, focusing on staff budgeting, inventory tracking, and accounts management.",
+      "images": [
+        "/images/b1.jpg",
+        "/images/b2.jpg",
+        "/images/b3.jpg",
+      ],
+      "technologies": ["Core PHP", "JavaScript", "Oracle"],
+      "role": "Software Engineer",
+      "details": "Worked on the budgeting, accounts, and inventory modules as a Software Engineer. Responsibilities included developing and maintaining modules to streamline financial planning, procurement workflows, and stock management. Utilized Core PHP for backend development, JavaScript for client-side interactions, and Oracle for database management to ensure system reliability and efficiency across the university's operations.",
+      "link": "#"
+    },    
     {
       id: 5,
       title: "Jane Bond BBQ",
       description: "Square Point API integration for a restaurant management system.",
-      image: "/placeholder.svg?height=400&width=600",
+      images: [
+        "/images/j1.jpg",
+        "/images/j2.jpg",
+        "/images/j3.jpg",
+        "/images/j4.jpg",
+      ],
       technologies: ["React JS", "Square API"],
       role: "Frontend Developer",
-      details:
-        "Integrated Square Point APIs to enhance the functionality of a restaurant management system. Implemented features like payment processing, inventory management, and sales reporting. The system provides real-time sales analytics, employee management, and customer relationship tools specifically designed for BBQ restaurants.",
-      link: "#",
+      details: "Integrated Square Point APIs to enhance the functionality of a restaurant management system. Implemented features like payment processing, inventory management, and sales reporting. The system provides real-time sales analytics, employee management, and customer relationship tools specifically designed for BBQ restaurants.",
+      link: "https://janebondbbq.com/",
     },
     {
       id: 6,
       title: "MineIQ",
       description: "A comprehensive mine management system with ticket-based workflow.",
-      image: "/placeholder.svg?height=400&width=600",
+      images: [
+        "/images/mi1.png",
+        "/images/mi2.png",
+        "/images/mi3.png",
+        "/images/mi4.png",
+      ],
       technologies: ["React JS", "Laravel", "MySQL"],
       role: "Full-Stack Developer",
-      details:
-        "Developed a comprehensive mine management system, implementing a ticket-based workflow for task tracking and team management. Implemented features like resource allocation, progress monitoring, and reporting. The system includes safety compliance tracking, equipment maintenance scheduling, and production analytics for mining operations.",
+      details: "Developed a comprehensive mine management system, implementing a ticket-based workflow for task tracking and team management. Implemented features like resource allocation, progress monitoring, and reporting. The system includes safety compliance tracking, equipment maintenance scheduling, and production analytics for mining operations.",
       link: "#",
     },
   ]
@@ -148,7 +191,7 @@ export default function Projects() {
             >
               <div className="relative h-48 overflow-hidden">
                 <Image
-                  src={project.image || "/placeholder.svg"}
+                  src={project.images[0] || "/placeholder.svg"}
                   alt={project.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -212,7 +255,7 @@ export default function Projects() {
             >
               <div className="relative h-64 sm:h-80">
                 <Image
-                  src={selectedProject.image || "/placeholder.svg"}
+                  src={selectedProject.images[currentImageIndex] || "/placeholder.svg"}
                   alt={selectedProject.title}
                   fill
                   className="object-cover"
@@ -223,6 +266,46 @@ export default function Projects() {
                 >
                   <X className="h-5 w-5" />
                 </button>
+                <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+                  <button
+                    className="bg-teal-500 p-2 rounded-full text-white hover:bg-teal-600 transition-colors shadow-lg"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentImageIndex((prev) => 
+                        prev === 0 ? selectedProject.images.length - 1 : prev - 1
+                      );
+                    }}
+                  >
+                    <ChevronRight className="h-5 w-5 rotate-180" />
+                  </button>
+                  <div className="flex gap-2">
+                    {selectedProject.images.map((_, index) => (
+                      <button
+                        key={index}
+                        className={`w-2 h-2 rounded-full transition-colors ${
+                          currentImageIndex === index
+                            ? "bg-white"
+                            : "bg-white/50 hover:bg-white/75"
+                        }`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setCurrentImageIndex(index);
+                        }}
+                      />
+                    ))}
+                  </div>
+                  <button
+                    className="bg-teal-500 p-2 rounded-full text-white hover:bg-teal-600 transition-colors shadow-lg"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentImageIndex((prev) => 
+                        prev === selectedProject.images.length - 1 ? 0 : prev + 1
+                      );
+                    }}
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </div>
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-2 text-slate-800 dark:text-white">{selectedProject.title}</h3>
