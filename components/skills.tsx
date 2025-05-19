@@ -43,13 +43,11 @@ export default function Skills() {
       name: "Third-Party API Integrations",
       skills: [
         { name: "Google APIs", level: 65 },
-        { name: "Microsoft Graph", level: 65 },
         { name: "Facebook API", level: 70 },
         { name: "Instagram API", level: 70 },
         { name: "Twitter API", level: 60 },
         { name: "Shopify API", level: 85 },
         { name: "Square POS", level: 90 },
-        { name: "EventBrite API", level: 70 },
         { name: "YouTube API", level: 80 },
         { name: "Twillio", level: 80 },
       ],
@@ -58,7 +56,6 @@ export default function Skills() {
       name: "Payment Gateways",
       skills: [
         { name: "Stripe", level: 80 },
-        { name: "PayPal", level: 70 },
         { name: "EasyPaisa", level: 80 },
         { name: "JazzCash", level: 80 },
       ],

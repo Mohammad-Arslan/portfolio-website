@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { Briefcase, Calendar, ChevronRight } from "lucide-react"
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Briefcase, Calendar, ChevronRight } from "lucide-react";
 
 export default function Experience() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   const experiences = [
     {
@@ -17,8 +17,9 @@ export default function Experience() {
       location: "Lahore",
       period: "July 2024 - Present",
       description: [
-        "Call Center CRM: Individually handled the development of a CRM system tailored for call center solutions, built with Laravel, Vue.js, MySQL, and Elasticsearch.",
-        "Document Management System (DMS): Built from scratch using Laravel, React.js, and Elasticsearch.",
+        "CRM: Contributing as a full-stack developer to a robust CRM platform tailored for call center operations, utilizing Laravel, Vue.js, MySQL, and Elasticsearch.",
+        "Content Management System (CMS): Contributing as a full-stack developer to a scalable and high-performance CMS built with Laravel, Vue.js, MySQL, Redis, and Elasticsearch, ensuring seamless content workflows and system reliability.",
+        "Customer Service & Relationship (CSR) Portal: Spearheading backend and frontend enhancements for a comprehensive CSR portal designed for efficient customer support and engagement, leveraging Laravel, Vue.js, MySQL, Redis, and Elasticsearch.",
       ],
     },
     {
@@ -55,7 +56,7 @@ export default function Experience() {
         "Developed the online food service module for a Restaurant Management System using Laravel and React JS, enhancing food ordering and delivery processes.",
       ],
     },
-  ]
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -65,7 +66,7 @@ export default function Experience() {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -74,7 +75,7 @@ export default function Experience() {
       opacity: 1,
       transition: { duration: 0.5 },
     },
-  }
+  };
 
   return (
     <section id="experience" className="py-20 bg-white dark:bg-slate-800">
@@ -100,7 +101,8 @@ export default function Experience() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto"
           >
-            Over 5+ years of professional experience building web applications and systems
+            Over 5+ years of professional experience building web applications
+            and systems
           </motion.p>
         </div>
 
@@ -117,7 +119,11 @@ export default function Experience() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className={`relative mb-12 ${index % 2 === 0 ? "md:ml-auto md:mr-[50%]" : "md:mr-auto md:ml-[50%]"} md:w-[45%]`}
+              className={`relative mb-12 ${
+                index % 2 === 0
+                  ? "md:ml-auto md:mr-[50%]"
+                  : "md:mr-auto md:ml-[50%]"
+              } md:w-[45%]`}
             >
               <div className="absolute top-0 left-1/2 md:left-auto md:right-0 md:translate-x-1/2 transform -translate-x-1/2 -translate-y-1/3 w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center z-10">
                 <Briefcase className="h-5 w-5 text-white" />
@@ -125,7 +131,9 @@ export default function Experience() {
 
               <div className="relative bg-white dark:bg-slate-700 p-6 rounded-lg shadow-lg border border-slate-100 dark:border-slate-600">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                  <h3 className="text-xl font-bold text-slate-800 dark:text-white">{exp.title}</h3>
+                  <h3 className="text-xl font-bold text-slate-800 dark:text-white">
+                    {exp.title}
+                  </h3>
                   <div className="flex items-center text-teal-500 mt-2 md:mt-0">
                     <Calendar className="h-4 w-4 mr-1" />
                     <span className="text-sm">{exp.period}</span>
@@ -133,15 +141,21 @@ export default function Experience() {
                 </div>
 
                 <div className="mb-4">
-                  <div className="text-slate-600 dark:text-slate-300 font-medium">{exp.company}</div>
-                  <div className="text-slate-500 dark:text-slate-400 text-sm">{exp.location}</div>
+                  <div className="text-slate-600 dark:text-slate-300 font-medium">
+                    {exp.company}
+                  </div>
+                  <div className="text-slate-500 dark:text-slate-400 text-sm">
+                    {exp.location}
+                  </div>
                 </div>
 
                 <ul className="space-y-2">
                   {exp.description.map((item, i) => (
                     <li key={i} className="flex">
                       <ChevronRight className="h-5 w-5 text-teal-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">{item}</span>
+                      <span className="text-slate-600 dark:text-slate-300 text-sm">
+                        {item}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -151,5 +165,5 @@ export default function Experience() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

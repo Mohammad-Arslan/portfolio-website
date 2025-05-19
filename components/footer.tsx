@@ -90,14 +90,14 @@ export default function Footer() {
                   Achievements
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="#testimonials"
                   className="text-slate-400 hover:text-teal-400 transition-colors"
                 >
                   Testimonials
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
                   href="#contact"
