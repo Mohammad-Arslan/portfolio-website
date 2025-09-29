@@ -63,7 +63,7 @@ export default function Hero() {
               >
                 View Projects
               </Button>
-              <a href="/mohammad-arslan-resume.pdf" download="Mohammad_Arslan_Resume.pdf">
+              <a href="/Mohammad_Arslan_Resume.pdf" download="Mohammad_Arslan_Resume.pdf">
                 <Button
                   variant="outline"
                   className="border-white/20 bg-white/10 text-white hover:bg-white/20 flex items-center"
