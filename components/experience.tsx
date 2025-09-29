@@ -13,9 +13,19 @@ export default function Experience() {
   const experiences = [
     {
       title: "Sr. Software Engineer",
+      company: "Beaconhouse Technology",
+      location: "Lahore",
+      period: "June 2025 - Present",
+      description: [
+        "United Charter School (UCS) ERP: Solely managing and developing the UCS ERP system at Beaconhouse Technology. This comprehensive school management platform streamlines academic, administrative, and operational workflows. Responsible for full-stack development, including module enhancements, performance optimization, and system scalability using modern web technologies.",
+        "Beam360 Platform: Contributing to Beam360, a large-scale education technology platform that integrates CRM, CMS, SIS, and LMS functionalities. Working primarily on the MERN stack, in collaboration with Python-based microservices. Played a key role in the development and maintenance of the LMS (Learning Management System) module, ensuring robust content delivery, user management, and interactive learning features across the platform.",
+      ],
+    },
+    {
+      title: "Sr. Software Engineer",
       company: "Back Bone Technology",
       location: "Lahore",
-      period: "July 2024 - Present",
+      period: "July 2024 - June 2025",
       description: [
         "CRM: Contributing as a full-stack developer to a robust CRM platform tailored for call center operations, utilizing Laravel, Vue.js, MySQL, and Elasticsearch.",
         "Content Management System (CMS): Contributing as a full-stack developer to a scalable and high-performance CMS built with Laravel, Vue.js, MySQL, Redis, and Elasticsearch, ensuring seamless content workflows and system reliability.",
