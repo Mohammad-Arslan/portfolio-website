@@ -137,9 +137,7 @@ export default function Contact() {
                 >
                   <Github className="h-5 w-5" />
                 </a>
-                <a
-                  href="mohammad-arslan-resume.pdf"
-                  download="Mohammad_Arslan_Resume.pdf"
+                <a href="/Mohammad_Arslan_Resume.pdf" download="Mohammad_Arslan_Resume.pdf"
                   className="w-10 h-10 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center text-teal-500 hover:bg-teal-200 dark:hover:bg-teal-800/30 transition-colors"
                 >
                   <Download className="h-5 w-5" />
