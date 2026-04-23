@@ -46,8 +46,9 @@ export default function About() {
               <Image
                 src="/images/pic.jpg"
                 alt="Mohammad Arslan"
-                fill
-                className="object-cover object-top"
+                width={1200}
+                height={1600}
+                className="w-full h-full object-cover object-top"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
