@@ -87,8 +87,9 @@ export default function Achievements() {
                   <Image
                     src={achievement.image || "/placeholder.svg"}
                     alt={achievement.title}
-                    fill
-                    className="object-cover object-center"
+                    width={1200}
+                    height={800}
+                    className="w-full h-full object-cover object-center"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority
                   />

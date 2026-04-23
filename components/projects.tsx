@@ -193,8 +193,9 @@ export default function Projects() {
                 <Image
                   src={project.images[0] || "/placeholder.svg"}
                   alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={1200}
+                  height={800}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
@@ -257,8 +258,9 @@ export default function Projects() {
                 <Image
                   src={selectedProject.images[currentImageIndex] || "/placeholder.svg"}
                   alt={selectedProject.title}
-                  fill
-                  className="object-cover"
+                  width={1200}
+                  height={800}
+                  className="w-full h-full object-cover"
                 />
                 <button
                   className="absolute top-4 right-4 bg-red-500 backdrop-blur-sm p-2 rounded-full text-white hover:bg-red-600 transition-colors"

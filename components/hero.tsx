@@ -22,8 +22,9 @@ export default function Hero() {
         <Image
           src="/images/mohammad-arslan.png"
           alt="Background"
-          fill
-          className="object-cover object-center blur-sm"
+          width={1920}
+          height={1080}
+          className="w-full h-full object-cover object-center blur-sm"
           priority
         />
         <div className="absolute inset-0 bg-slate-900/80"></div>

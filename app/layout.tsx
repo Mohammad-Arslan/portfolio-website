@@ -7,6 +7,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: "Mohammad Arslan - Senior Software Engineer | PHP, Laravel, React, Next.js",
   description:
     "Experienced Senior Software Engineer with 5+ years specializing in PHP, Laravel, React, and Next.js. Building robust web applications and solving complex problems through elegant code.",
