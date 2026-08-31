@@ -31,7 +31,7 @@ export default function Footer() {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://github.com/Mohammad-Arslan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-teal-400 transition-colors"
@@ -39,7 +39,7 @@ export default function Footer() {
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="mailto:shanitoor73@gmail.com"
+                href="mailto:mohammadarslan.tech@gmail.com"
                 className="text-slate-400 hover:text-teal-400 transition-colors"
               >
                 <Mail className="h-5 w-5" />
@@ -118,7 +118,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-teal-500 mr-2" />
-                <span className="text-slate-400">shanitoor73@gmail.com</span>
+                <span className="text-slate-400">mohammadarslan.tech@gmail.com</span>
               </li>
             </ul>
           </div>
