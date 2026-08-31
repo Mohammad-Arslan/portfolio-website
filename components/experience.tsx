@@ -111,8 +111,7 @@ export default function Experience() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto"
           >
-            Over 5+ years of professional experience building web applications
-            and systems
+            Nearly six years building and modernizing business-critical platforms
           </motion.p>
         </div>
 
