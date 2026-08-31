@@ -103,7 +103,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-slate-800 dark:text-white mb-1">Email</h4>
-                  <p className="text-slate-600 dark:text-slate-300">shanitoor73@gmail.com</p>
+                  <p className="text-slate-600 dark:text-slate-300">mohammadarslan.tech@gmail.com</p>
                 </div>
               </motion.div>
 
@@ -130,7 +130,7 @@ export default function Contact() {
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/Mohammad-Arslan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center text-teal-500 hover:bg-teal-200 dark:hover:bg-teal-800/30 transition-colors"
