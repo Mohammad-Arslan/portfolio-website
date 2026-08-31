@@ -58,25 +58,26 @@ export default function About() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h2 className="text-3xl font-bold mb-2 text-slate-800 dark:text-white">About Me</h2>
+            <p className="mb-3 font-mono text-sm uppercase tracking-[.2em] text-teal-600">How I work</p>
+            <h2 className="text-4xl font-semibold tracking-tight mb-2 text-slate-800 dark:text-white">From business problem to production system.</h2>
             <div className="w-20 h-1 bg-teal-500 mb-6"></div>
 
             <p className="text-slate-600 dark:text-slate-300 mb-4">
-              Dynamic and innovative Senior Software Engineer with over 5+ years of experience, specializing in PHP,
-              JavaScript, SQL, and modern frameworks like Laravel, React JS, and Next JS. I'm passionate about building
-              scalable web applications and solving complex problems through elegant code.
+              I am a senior full-stack engineer with nearly six years of experience building the systems behind growing
+              businesses: SaaS products, education platforms, ERP modules, CRMs and operational portals. My strongest
+              work sits at the intersection of Laravel architecture, React interfaces and reliable data workflows.
             </p>
 
             <p className="text-slate-600 dark:text-slate-300 mb-6">
-              Beyond coding, I enjoy staying updated with the latest tech trends, contributing to open-source projects,
-              and mentoring junior developers. I believe in writing clean, maintainable code and creating intuitive user
-              experiences.
+              I take ownership across discovery, database and API design, implementation, integrations, performance,
+              testing and deployment. I work comfortably with distributed teams and communicate technical trade-offs
+              in clear business language.
             </p>
 
             <div className="flex flex-col space-y-3 mb-6">
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 text-teal-500 mr-3" />
-                <span className="text-slate-600 dark:text-slate-300">LMDC, Lahore, Pakistan</span>
+                <span className="text-slate-600 dark:text-slate-300">Lahore, Pakistan · available remotely worldwide</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-teal-500 mr-3" />
