@@ -48,7 +48,7 @@ export default function About() {
                 alt="Mohammad Arslan"
                 width={1200}
                 height={1600}
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-top grayscale"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
@@ -63,9 +63,9 @@ export default function About() {
             <div className="w-20 h-1 bg-teal-500 mb-6"></div>
 
             <p className="text-slate-600 dark:text-slate-300 mb-4">
-              I am a senior full-stack engineer with nearly six years of experience building the systems behind growing
-              businesses: SaaS products, education platforms, ERP modules, CRMs and operational portals. My strongest
-              work sits at the intersection of Laravel architecture, React interfaces and reliable data workflows.
+              I am a senior full-stack engineer focused on the systems behind growing businesses: SaaS products,
+              education platforms, ERP modules, CRMs and operational portals. My strongest work sits at the intersection
+              of Laravel architecture, React interfaces and reliable data workflows.
             </p>
 
             <p className="text-slate-600 dark:text-slate-300 mb-6">
@@ -81,7 +81,7 @@ export default function About() {
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-teal-500 mr-3" />
-                <span className="text-slate-600 dark:text-slate-300">shanitoor73@gmail.com</span>
+                <span className="text-slate-600 dark:text-slate-300">mohammadarslan.tech@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <Linkedin className="h-5 w-5 text-teal-500 mr-3" />
