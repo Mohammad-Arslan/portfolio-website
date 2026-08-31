@@ -8,10 +8,12 @@ import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import Achievements from "@/components/achievements"
 import Testimonials from "@/components/testimonials"
+import Nav from "@/components/nav"
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <Nav />
       <Hero />
       <About />
       <Experience />

@@ -171,7 +171,7 @@ export default function Projects() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto"
           >
-            A selection of my recent work and contributions
+            Selected enterprise products across CRM, operations, events and commerce
           </motion.p>
         </div>
 
