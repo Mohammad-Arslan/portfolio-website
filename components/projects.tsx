@@ -1,1 +1,415 @@
-InVzZSBjbGllbnQiCgppbXBvcnQgeyB1c2VTdGF0ZSB9IGZyb20gInJlYWN0IgppbXBvcnQgeyBtb3Rpb24gfSBmcm9tICJmcmFtZXItbW90aW9uIgppbXBvcnQgeyB1c2VJblZpZXcgfSBmcm9tICJyZWFjdC1pbnRlcnNlY3Rpb24tb2JzZXJ2ZXIiCmltcG9ydCBJbWFnZSBmcm9tICJuZXh0L2ltYWdlIgppbXBvcnQgeyBCdXR0b24gfSBmcm9tICJAL2NvbXBvbmVudHMvdWkvYnV0dG9uIgppbXBvcnQgeyBDaGV2cm9uUmlnaHQsIEV4dGVybmFsTGluaywgR2l0aHViLCBYIH0gZnJvbSAibHVjaWRlLXJlYWN0IgoKaW50ZXJmYWNlIFByb2plY3QgewogIGlkOiBudW1iZXI7CiAgdGl0bGU6IHN0cmluZzsKICBkZXNjcmlwdGlvbjogc3RyaW5nOwogIGltYWdlczogc3RyaW5nW107CiAgdGVjaG5vbG9naWVzOiBzdHJpbmdbXTsKICByb2xlOiBzdHJpbmc7CiAgZGV0YWlsczogc3RyaW5nOwogIGxpbms/OiBzdHJpbmc7CiAgZ2l0aHViTGluaz86IHN0cmluZzsKICBkZW1vVmlkZW8/OiBzdHJpbmc7Cn0KCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIFByb2plY3RzKCkgewogIGNvbnN0IFtyZWYsIGluVmlld10gPSB1c2VJblZpZXcoewogICAgdHJpZ2dlck9uY2U6IHRydWUsCiAgICB0aHJlc2hvbGQ6IDAuMSwKICB9KQoKICBjb25zdCBbc2VsZWN0ZWRQcm9qZWN0LCBzZXRTZWxlY3RlZFByb2plY3RdID0gdXNlU3RhdGU8UHJvamVjdCB8IG51bGw+KG51bGwpCiAgY29uc3QgW2N1cnJlbnRJbWFnZUluZGV4LCBzZXRDdXJyZW50SW1hZ2VJbmRleF0gPSB1c2VTdGF0ZSgwKQoKICBjb25zdCBwcm9qZWN0czogUHJvamVjdFtdID0gWwogICAgewogICAgICBpZDogMSwKICAgICAgdGl0bGU6ICJpUHJvc3BlciBDUk0iLAogICAgICBkZXNjcmlwdGlvbjogIkEgY29tcHJlaGVuc2l2ZSBDUk0gc3lzdGVtIHdpdGggcGF5bWVudCBpbnRlZ3JhdGlvbiBhbmQgdGhpcmQtcGFydHkgc2VydmljZSBzeW5jaHJvbml6YXRpb24uIiwKICAgICAgaW1hZ2VzOiBbCiAgICAgICAgIi9pbWFnZXMvaTEucG5nIiwKICAgICAgICAiL2ltYWdlcy9pMi5wbmciLAogICAgICAgICIvaW1hZ2VzL2kzLnBuZyIsCiAgICAgICAgIi9pbWFnZXMvaTQucG5nIiwKICAgICAgICAiL2ltYWdlcy9pNS5wbmciLAogICAgICBdLAogICAgICB0ZWNobm9sb2dpZXM6IFsiUEhQIiwgIkNlcnZvIiwgIlJlYWN0IEpTIiwgIk15U1FMIl0sCiAgICAgIHJvbGU6ICJGdWxsIFN0YWNrIERldmVsb3BlciIsCiAgICAgIGRldGFpbHM6ICJJbnRlZ3JhdGVkIFN0cmlwZSBhbmQgUGF5UGFsIGZvciBzZWFtbGVzcyB0cmFuc2FjdGlvbnMsIGFuZCBzeW5jaHJvbml6ZWQgZGF0YSB3aXRoIEdvb2dsZSBhbmQgTWljcm9zb2Z0IHNlcnZpY2VzLiBJbXBsZW1lbnRlZCB1c2VyIGF1dGhlbnRpY2F0aW9uLCByb2xlLWJhc2VkIGFjY2VzcyBjb250cm9sLCBhbmQgcmVhbC10aW1lIG5vdGlmaWNhdGlvbnMuIFRoZSBzeXN0ZW0gaW5jbHVkZXMgY29udGFjdCBtYW5hZ2VtZW50LCBzYWxlcyBwaXBlbGluZSB0cmFja2luZywgZW1haWwgaW50ZWdyYXRpb24sIGFuZCBjb21wcmVoZW5zaXZlIHJlcG9ydGluZyBkYXNoYm9hcmRzLiIsCiAgICAgIGxpbms6ICIjIiwKICAgIH0sCiAgICB7CiAgICAgIGlkOiAyLAogICAgICB0aXRsZTogIktleUNvbm5lY3QgQ1JNIiwKICAgICAgZGVzY3JpcHRpb246ICJBIENSTSBzeXN0ZW0gdGFpbG9yZWQgZm9yIGNhbGwgY2VudGVyIHNvbHV0aW9ucywgYnVpbHQgd2l0aCBMYXJhdmVsLCBWdWUuanMsIE15U1FMLCBhbmQgRWxhc3RpY3NlYXJjaC4iLAogICAgICBpbWFnZXM6IFsKICAgICAgICAiL2ltYWdlcy9jcm0xLmpwZyIsCiAgICAgICAgIi9pbWFnZXMvY3JtMi5qcGciLAogICAgICAgICIvaW1hZ2VzL2NybTMuanBnIiwKICAgICAgICAiL2ltYWdlcy9jcm00LmpwZyIsCiAgICAgICAgIi9pbWFnZXMvY3JtNS5qcGciLAogICAgICAgICIvaW1hZ2VzL2NybTYuanBnIiwKICAgICAgXSwKICAgICAgdGVjaG5vbG9naWVzOiBbIkxhcmF2ZWwiLCAiTXlTUUwiLCAiQWpheCIsICJCbGFkZSIsICJWdWVKUyIsICJFbGFzdGljc2VhcmNoIl0sCiAgICAgIHJvbGU6ICJGdWxsIFN0YWNrIERldmVsb3BlciIsCiAgICAgIGRldGFpbHM6ICJDb250cmlidXRlZCBhcyBhIHNlbmlvciBmdWxsIHN0YWNrIGRldmVsb3BlciB0byB0aGUgZGV2ZWxvcG1lbnQgb2YgYSBjb21wcmVoZW5zaXZlIENSTSBzeXN0ZW0gdGFpbG9yZWQgZm9yIGNhbGwgY2VudGVyIG9wZXJhdGlvbnMuIFRoZSBwbGF0Zm9ybSBpbmNvcnBvcmF0ZXMgVm9JUCBhbmQgU0lQIGludGVncmF0aW9uIHRvIGZhY2lsaXRhdGUgZWZmaWNpZW50IGNvbW11bmljYXRpb24gYW5kIGNhbGwgaGFuZGxpbmcuIFV0aWxpemVkIExhcmF2ZWwgZm9yIGJ1aWxkaW5nIHJvYnVzdCBiYWNrZW5kIHNlcnZpY2VzLCBWdWUuanMgYW5kIEJsYWRlIHdpdGggQUpBWCBmb3IgY3JlYXRpbmcgcmVzcG9uc2l2ZSBhbmQgZHluYW1pYyB1c2VyIGludGVyZmFjZXMsIGFuZCBFbGFzdGljc2VhcmNoIGZvciBoaWdoLXBlcmZvcm1hbmNlIHJlYWwtdGltZSBzZWFyY2ggY2FwYWJpbGl0aWVzLiIsCiAgICAgIGxpbms6ICIjIiwKICAgIH0sCiAgICB7CiAgICAgIGlkOiAzLAogICAgICB0aXRsZTogIlRpbmcgLSBFdmVudCBNYW5hZ2VtZW50IFN5c3RlbSIsCiAgICAgIGRlc2NyaXB0aW9uOiAiQW4gZXZlbnQgbWFuYWdlbWVudCBzeXN0ZW0gd2l0aCBORkMgdGVjaG5vbG9neSBpbnRlZ3JhdGlvbi4iLAogICAgICBpbWFnZXM6IFsKICAgICAgICAiL2ltYWdlcy90MS5wbmciLAogICAgICAgICIvaW1hZ2VzL3QyLnBuZyIsCiAgICAgICAgIi9pbWFnZXMvdDMucG5nIiwKICAgICAgICAiL2ltYWdlcy90NC5wbmciLAogICAgICAgICIvaW1hZ2VzL3Q1LnBuZyIsCiAgICAgICAgIi9pbWFnZXMvdDYucG5nIiwKICAgICAgICAiL2ltYWdlcy90Ny5wbmciLAogICAgICAgICIvaW1hZ2VzL3Q4LnBuZyIsCiAgICAgICAgIi9pbWFnZXMvdDkucG5nIiwKICAgICAgICAiL2ltYWdlcy90MTAucG5nIiwKICAgICAgXSwKICAgICAgdGVjaG5vbG9naWVzOiBbIkxhcmF2ZWwiLCAiTXlTUUwiLCAiTkZDIFRlY2hub2xvZ3kiXSwKICAgICAgcm9sZTogIkJhY2tlbmQgRGV2ZWxvcGVyIiwKICAgICAgZGV0YWlsczogIkxlZCB0aGUgZGV2ZWxvcG1lbnQgb2YgYW4gZXZlbnQgbWFuYWdlbWVudCBzeXN0ZW0gaW50ZWdyYXRpbmcgTkZDIHRlY2hub2xvZ3kgZm9yIHNlYW1sZXNzIGF0dGVuZGFuY2UgdHJhY2tpbmcgYW5kIHVzZXIgbWFuYWdlbWVudC4gSW1wbGVtZW50ZWQgZmVhdHVyZXMgbGlrZSBldmVudCBjcmVhdGlvbiwgdGlja2V0IHNhbGVzLCBhdHRlbmRlZSBtYW5hZ2VtZW50LCBhbmQgcmVwb3J0aW5nLiBUaGUgc3lzdGVtIHN1cHBvcnRzIG11bHRpcGxlIGV2ZW50IHR5cGVzLCBjdXN0b20gcmVnaXN0cmF0aW9uIGZvcm1zLCBhbmQgcmVhbC10aW1lIGFuYWx5dGljcyBmb3IgZXZlbnQgb3JnYW5pemVycy4iLAogICAgICBsaW5rOiAiIyIsCiAgICB9LAogICAgewogICAgICAiaWQiOiA0LAogICAgICAidGl0bGUiOiAiQ2FwZXggQk5VIiwKICAgICAgImRlc2NyaXB0aW9uIjogIkEgY29tcHJlaGVuc2l2ZSBtYW5hZ2VtZW50IHN5c3RlbSBkZXZlbG9wZWQgZm9yIEJlYWNvbmhvdXNlIE5hdGlvbmFsIFVuaXZlcnNpdHkgYW5kIGl0cyBhZmZpbGlhdGVkIHNjaG9vbHMsIGZvY3VzaW5nIG9uIHN0YWZmIGJ1ZGdldGluZywgaW52ZW50b3J5IHRyYWNraW5nLCBhbmQgYWNjb3VudHMgbWFuYWdlbWVudC4iLAogICAgICAiaW1hZ2VzIjogWwogICAgICAgICIvaW1hZ2VzL2IxLmpwZyIsCiAgICAgICAgIi9pbWFnZXMvYjIuanBnIiwKICAgICAgICAiL2ltYWdlcy9iMy5qcGciLAogICAgICBdLAogICAgICAidGVjaG5vbG9naWVzIjogWyJDb3JlIFBIUCIsICJKYXZhU2NyaXB0IiwgIk9yYWNsZSJdLAogICAgICAicm9sZSI6ICJTb2Z0d2FyZSBFbmdpbmVlciIsCiAgICAgICJkZXRhaWxzIjogIldvcmtlZCBvbiB0aGUgYnVkZ2V0aW5nLCBhY2NvdW50cywgYW5kIGludmVudG9yeSBtb2R1bGVzIGFzIGEgU29mdHdhcmUgRW5naW5lZXIuIFJlc3BvbnNpYmlsaXRpZXMgaW5jbHVkZWQgZGV2ZWxvcGluZyBhbmQgbWFpbnRhaW5pbmcgbW9kdWxlcyB0byBzdHJlYW1saW5lIGZpbmFuY2lhbCBwbGFubmluZywgcHJvY3VyZW1lbnQgd29ya2Zsb3dzLCBhbmQgc3RvY2sgbWFuYWdlbWVudC4gVXRpbGl6ZWQgQ29yZSBQSFAgZm9yIGJhY2tlbmQgZGV2ZWxvcG1lbnQsIEphdmFTY3JpcHQgZm9yIGNsaWVudC1zaWRlIGludGVyYWN0aW9ucywgYW5kIE9yYWNsZSBmb3IgZGF0YWJhc2UgbWFuYWdlbWVudCB0byBlbnN1cmUgc3lzdGVtIHJlbGlhYmlsaXR5IGFuZCBlZmZpY2llbmN5IGFjcm9zcyB0aGUgdW5pdmVyc2l0eSdzIG9wZXJhdGlvbnMuIiwKICAgICAgImxpbmsiOiAiIyIKICAgIH0sICAgIAogICAgewogICAgICBpZDogNSwKICAgICAgdGl0bGU6ICJKYW5lIEJvbmQgQkJRIiwKICAgICAgZGVzY3JpcHRpb246ICJTcXVhcmUgUG9pbnQgQVBJIGludGVncmF0aW9uIGZvciBhIHJlc3RhdXJhbnQgbWFuYWdlbWVudCBzeXN0ZW0uIiwKICAgICAgaW1hZ2VzOiBbCiAgICAgICAgIi9pbWFnZXMvajEuanBnIiwKICAgICAgICAiL2ltYWdlcy9qMi5qcGciLAogICAgICAgICIvaW1hZ2VzL2ozLmpwZyIsCiAgICAgICAgIi9pbWFnZXMvajQuanBnIiwKICAgICAgXSwKICAgICAgdGVjaG5vbG9naWVzOiBbIlJlYWN0IEpTIiwgIlNxdWFyZSBBUEkiXSwKICAgICAgcm9sZTogIkZyb250ZW5kIERldmVsb3BlciIsCiAgICAgIGRldGFpbHM6ICJJbnRlZ3JhdGVkIFNxdWFyZSBQb2ludCBBUElzIHRvIGVuaGFuY2UgdGhlIGZ1bmN0aW9uYWxpdHkgb2YgYSByZXN0YXVyYW50IG1hbmFnZW1lbnQgc3lzdGVtLiBJbXBsZW1lbnRlZCBmZWF0dXJlcyBsaWtlIHBheW1lbnQgcHJvY2Vzc2luZywgaW52ZW50b3J5IG1hbmFnZW1lbnQsIGFuZCBzYWxlcyByZXBvcnRpbmcuIFRoZSBzeXN0ZW0gcHJvdmlkZXMgcmVhbC10aW1lIHNhbGVzIGFuYWx5dGljcywgZW1wbG95ZWUgbWFuYWdlbWVudCwgYW5kIGN1c3RvbWVyIHJlbGF0aW9uc2hpcCB0b29scyBzcGVjaWZpY2FsbHkgZGVzaWduZWQgZm9yIEJCUSByZXN0YXVyYW50cy4iLAogICAgICBsaW5rOiAiIyIsCiAgICB9LAogICAgewogICAgICBpZDogNiwKICAgICAgdGl0bGU6ICJNaW5lSVEiLAogICAgICBkZXNjcmlwdGlvbjogIkEgY29tcHJlaGVuc2l2ZSBtaW5lIG1hbmFnZW1lbnQgc3lzdGVtIHdpdGggdGlja2V0LWJhc2VkIHdvcmtmbG93LiIsCiAgICAgIGltYWdlczogWwogICAgICAgICIvaW1hZ2VzL21pMS5wbmciLAogICAgICAgICIvaW1hZ2VzL21pMi5wbmciLAogICAgICAgICIvaW1hZ2VzL21pMy5wbmciLAogICAgICAgICIvaW1hZ2VzL21pNC5wbmciLAogICAgICBdLAogICAgICB0ZWNobm9sb2dpZXM6IFsiUmVhY3QgSlMiLCAiTGFyYXZlbCIsICJNeVNRTCJdLAogICAgICByb2xlOiAiRnVsbC1TdGFjayBEZXZlbG9wZXIiLAogICAgICBkZXRhaWxzOiAiRGV2ZWxvcGVkIGEgY29tcHJlaGVuc2l2ZSBtaW5lIG1hbmFnZW1lbnQgc3lzdGVtLCBpbXBsZW1lbnRpbmcgYSB0aWNrZXQtYmFzZWQgd29ya2Zsb3cgZm9yIHRhc2sgdHJhY2tpbmcgYW5kIHRlYW0gbWFuYWdlbWVudC4gSW1wbGVtZW50ZWQgZmVhdHVyZXMgbGlrZSByZXNvdXJjZSBhbGxvY2F0aW9uLCBwcm9ncmVzcyBtb25pdG9yaW5nLCBhbmQgcmVwb3J0aW5nLiBUaGUgc3lzdGVtIGluY2x1ZGVzIHNhZmV0eSBjb21wbGlhbmNlIHRyYWNraW5nLCBlcXVpcG1lbnQgbWFpbnRlbmFuY2Ugc2NoZWR1bGluZywgYW5kIHByb2R1Y3Rpb24gYW5hbHl0aWNzIGZvciBtaW5pbmcgb3BlcmF0aW9ucy4iLAogICAgICBsaW5rOiAiIyIsCiAgICB9LAogICAgewogICAgICBpZDogNywKICAgICAgdGl0bGU6ICJSZXRhaWxQdWxzZSIsCiAgICAgIGRlc2NyaXB0aW9uOiAiQSBtdWx0aS10ZW5hbnQgcmV0YWlsIFBPUyBTYWFTIGZvciBwcm9kdWN0IGNhdGFsb2d1ZXMsIGludmVudG9yeSwgc2FsZXMsIHB1cmNoYXNpbmcsIGJyYW5jaGVzLCBhbmQgb3BlcmF0aW9ucy4iLAogICAgICBpbWFnZXM6IFsiL3ZpZGVvcy9yZXRhaWxwdWxzZS1wb3N0ZXIuanBnIl0sCiAgICAgIHRlY2hub2xvZ2llczogWyJMYXJhdmVsIDEzIiwgIlJlYWN0IiwgIkluZXJ0aWEiLCAiTXlTUUwiLCAiUmVkaXMiLCAiRG9ja2VyIl0sCiAgICAgIHJvbGU6ICJGdWxsLVN0YWNrIERldmVsb3BlciIsCiAgICAgIGRldGFpbHM6ICJEZXNpZ25lZCBhbmQgZGV2ZWxvcGVkIGEgc2NhbGFibGUsIG11bHRpLXRlbmFudCBwb2ludC1vZi1zYWxlIHBsYXRmb3JtIGZvciBtaWQtc2l6ZWQgcmV0YWlsZXJzLiBSZXRhaWxQdWxzZSBpbmNsdWRlcyBicmFuY2gtYXdhcmUgYWNjZXNzIGNvbnRyb2wsIHByb2R1Y3QgYW5kIGNhdGFsb2d1ZSBtYW5hZ2VtZW50LCBpbnZlbnRvcnkgYW5kIHdhcmVob3VzZSBvcGVyYXRpb25zLCBQT1MgY2hlY2tvdXQsIHNhbGVzLCBzdXBwbGllcnMsIHB1cmNoYXNlIG9yZGVycywgZ29vZHMgcmVjZWlwdHMsIHN0b2NrIHRyYW5zZmVycywgYWNjb3VudGluZyBqb3VybmFscywgcmVhbC10aW1lIHVwZGF0ZXMsIHF1ZXVlZCBpbXBvcnRzLCBhbmQgZGVwbG95bWVudC1yZWFkeSBEb2NrZXIgaW5mcmFzdHJ1Y3R1cmUuIiwKICAgICAgbGluazogImh0dHBzOi8vbW9oYW1tYWQtYXJzbGFuLm5ldGxpZnkuYXBwLyNwcm9qZWN0cyIsCiAgICAgIGdpdGh1Ykxpbms6ICJodHRwczovL2dpdGh1Yi5jb20vTW9oYW1tYWQtQXJzbGFuL3JldGFpbHB1bHNlIiwKICAgICAgZGVtb1ZpZGVvOiAiL3ZpZGVvcy9yZXRhaWxwdWxzZS5tcDQiLAogICAgfSwKICBdCgogIGNvbnN0IGNvbnRhaW5lclZhcmlhbnRzID0gewogICAgaGlkZGVuOiB7IG9wYWNpdHk6IDAgfSwKICAgIHZpc2libGU6IHsKICAgICAgb3BhY2l0eTogMSwKICAgICAgdHJhbnNpdGlvbjogewogICAgICAgIHN0YWdnZXJDaGlsZHJlbjogMC4xLAogICAgICB9LAogICAgfSwKICB9CgogIGNvbnN0IGl0ZW1WYXJpYW50cyA9IHsKICAgIGhpZGRlbjogeyB5OiAyMCwgb3BhY2l0eTogMCB9LAogICAgdmlzaWJsZTogewogICAgICB5OiAwLAogICAgICBvcGFjaXR5OiAxLAogICAgICB0cmFuc2l0aW9uOiB7IGR1cmF0aW9uOiAwLjUgfSwKICAgIH0sCiAgfQoKICByZXR1cm4gKAogICAgPHNlY3Rpb24gaWQ9InByb2plY3RzIiBjbGFzc05hbWU9InB5LTIwIGJnLXdoaXRlIGRhcms6Ymctc2xhdGUtODAwIj4KICAgICAgPGRpdiBjbGFzc05hbWU9ImNvbnRhaW5lciBteC1hdXRvIHB4LTQiPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LWNlbnRlciBtYi0xNiI+CiAgICAgICAgICA8bW90aW9uLmgyCiAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCwgeTogLTIwIH19CiAgICAgICAgICAgIGFuaW1hdGU9e3sgb3BhY2l0eTogaW5WaWV3ID8gMSA6IDAsIHk6IGluVmlldyA/IDAgOiAtMjAgfX0KICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBkdXJhdGlvbjogMC41IH19CiAgICAgICAgICAgIGNsYXNzTmFtZT0idGV4dC0zeGwgZm9udC1ib2xkIHRleHQtc2xhdGUtODAwIGRhcms6dGV4dC13aGl0ZSIKICAgICAgICAgID4KICAgICAgICAgICAgRmVhdHVyZWQgUHJvamVjdHMKICAgICAgICAgIDwvbW90aW9uLmgyPgogICAgICAgICAgPG1vdGlvbi5kaXYKICAgICAgICAgICAgaW5pdGlhbD17eyBvcGFjaXR5OiAwLCB3aWR0aDogMCB9fQogICAgICAgICAgICBhbmltYXRlPXt7IG9wYWNpdHk6IGluVmlldyA/IDEgOiAwLCB3aWR0aDogaW5WaWV3ID8gIjEyMHB4IiA6IDAgfX0KICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBkdXJhdGlvbjogMC44LCBkZWxheTogMC4yIH19CiAgICAgICAgICAgIGNsYXNzTmFtZT0iaC0xIGJnLXRlYWwtNTAwIG14LWF1dG8gbXQtMiBtYi00IgogICAgICAgICAgPjwvbW90aW9uLmRpdj4KICAgICAgICAgIDxtb3Rpb24ucAogICAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAgfX0KICAgICAgICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiBpblZpZXcgPyAxIDogMCB9fQogICAgICAgICAgICB0cmFuc2l0aW9uPXt7IGR1cmF0aW9uOiAwLjUsIGRlbGF5OiAwLjMgfX0KICAgICAgICAgICAgY2xhc3NOYW1lPSJ0ZXh0LXNsYXRlLTYwMCBkYXJrOnRleHQtc2xhdGUtMzAwIG1heC13LTJ4bCBteC1hdXRvIgogICAgICAgICAgPgogICAgICAgICAgICBTZWxlY3RlZCBlbnRlcnByaXNlIHByb2R1Y3RzIGFjcm9zcyBDUk0sIG9wZXJhdGlvbnMsIGV2ZW50cyBhbmQgY29tbWVyY2UKICAgICAgICAgIDwvbW90aW9uLnA+CiAgICAgICAgPC9kaXY+CgogICAgICAgIDxtb3Rpb24uZGl2CiAgICAgICAgICByZWY9e3JlZn0KICAgICAgICAgIHZhcmlhbnRzPXtjb250YWluZXJWYXJpYW50c30KICAgICAgICAgIGluaXRpYWw9ImhpZGRlbiIKICAgICAgICAgIGFuaW1hdGU9e2luVmlldyA/ICJ2aXNpYmxlIiA6ICJoaWRkZW4ifQogICAgICAgICAgY2xhc3NOYW1lPSJncmlkIGdyaWQtY29scy0xIG1kOmdyaWQtY29scy0yIGxnOmdyaWQtY29scy0zIGdhcC04IgogICAgICAgID4KICAgICAgICAgIHtwcm9qZWN0cy5tYXAoKHByb2plY3QpID0+ICgKICAgICAgICAgICAgPG1vdGlvbi5kaXYKICAgICAgICAgICAgICBrZXk9e3Byb2plY3QuaWR9CiAgICAgICAgICAgICAgdmFyaWFudHM9e2l0ZW1WYXJpYW50c30KICAgICAgICAgICAgICBjbGFzc05hbWU9ImJnLXdoaXRlIGRhcms6Ymctc2xhdGUtNzAwIHJvdW5kZWQtbGcgc2hhZG93LWxnIG92ZXJmbG93LWhpZGRlbiBib3JkZXIgYm9yZGVyLXNsYXRlLTEwMCBkYXJrOmJvcmRlci1zbGF0ZS02MDAgZ3JvdXAgaG92ZXI6c2hhZG93LXhsIHRyYW5zaXRpb24tc2hhZG93IGR1cmF0aW9uLTMwMCIKICAgICAgICAgICAgICB3aGlsZUhvdmVyPXt7IHk6IC01IH19CiAgICAgICAgICAgID4KICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icmVsYXRpdmUgaC00OCBvdmVyZmxvdy1oaWRkZW4iPgogICAgICAgICAgICAgICAgPEltYWdlCiAgICAgICAgICAgICAgICAgIHNyYz17cHJvamVjdC5pbWFnZXNbMF0gfHwgIi9wbGFjZWhvbGRlci5zdmcifQogICAgICAgICAgICAgICAgICBhbHQ9e3Byb2plY3QudGl0bGV9CiAgICAgICAgICAgICAgICAgIHdpZHRoPXsxMjAwfQogICAgICAgICAgICAgICAgICBoZWlnaHQ9ezgwMH0KICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJ3LWZ1bGwgaC1mdWxsIG9iamVjdC1jb3ZlciB0cmFuc2l0aW9uLXRyYW5zZm9ybSBkdXJhdGlvbi01MDAgZ3JvdXAtaG92ZXI6c2NhbGUtMTEwIgogICAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJhYnNvbHV0ZSBpbnNldC0wIGJnLWdyYWRpZW50LXRvLXQgZnJvbS1zbGF0ZS05MDAvODAgdG8tdHJhbnNwYXJlbnQgb3BhY2l0eS0wIGdyb3VwLWhvdmVyOm9wYWNpdHktMTAwIHRyYW5zaXRpb24tb3BhY2l0eSBkdXJhdGlvbi0zMDAiPjwvZGl2PgogICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImFic29sdXRlIGJvdHRvbS0wIGxlZnQtMCByaWdodC0wIHAtNCB0cmFuc2xhdGUteS1mdWxsIGdyb3VwLWhvdmVyOnRyYW5zbGF0ZS15LTAgdHJhbnNpdGlvbi10cmFuc2Zvcm0gZHVyYXRpb24tMzAwIj4KICAgICAgICAgICAgICAgICAgPEJ1dHRvbgogICAgICAgICAgICAgICAgICAgIHNpemU9InNtIgogICAgICAgICAgICAgICAgICAgIHZhcmlhbnQ9Im91dGxpbmUiCiAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJiZy13aGl0ZS8xMCBib3JkZXItd2hpdGUvMjAgdGV4dC13aGl0ZSBob3ZlcjpiZy13aGl0ZS8yMCIKICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiB7CiAgICAgICAgICAgICAgICAgICAgICBzZXRDdXJyZW50SW1hZ2VJbmRleCgwKQogICAgICAgICAgICAgICAgICAgICAgc2V0U2VsZWN0ZWRQcm9qZWN0KHByb2plY3QpCiAgICAgICAgICAgICAgICAgICAgfX0KICAgICAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgICAgIFZpZXcgRGV0YWlscwogICAgICAgICAgICAgICAgICA8L0J1dHRvbj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJwLTYiPgogICAgICAgICAgICAgICAgPGgzIGNsYXNzTmFtZT0idGV4dC14bCBmb250LWJvbGQgbWItMiB0ZXh0LXNsYXRlLTgwMCBkYXJrOnRleHQtd2hpdGUiPntwcm9qZWN0LnRpdGxlfTwvaDM+CiAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc2xhdGUtNjAwIGRhcms6dGV4dC1zbGF0ZS0zMDAgbWItNCBsaW5lLWNsYW1wLTIiPntwcm9qZWN0LmRlc2NyaXB0aW9ufTwvcD4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGZsZXgtd3JhcCBnYXAtMiBtYi00Ij4KICAgICAgICAgICAgICAgICAge3Byb2plY3QudGVjaG5vbG9naWVzLm1hcCgodGVjaCwgaW5kZXgpID0+ICgKICAgICAgICAgICAgICAgICAgICA8c3BhbgogICAgICAgICAgICAgICAgICAgICAga2V5PXtpbmRleH0KICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0icHgtMiBweS0xIHRleHQteHMgYmctdGVhbC0xMDAgZGFyazpiZy10ZWFsLTkwMC8zMCB0ZXh0LXRlYWwtODAwIGRhcms6dGV4dC10ZWFsLTMwMCByb3VuZGVkLWZ1bGwiCiAgICAgICAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgICAgICAge3RlY2h9CiAgICAgICAgICAgICAgICAgICAgPC9zcGFuPgogICAgICAgICAgICAgICAgICApKX0KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXgganVzdGlmeS1iZXR3ZWVuIGl0ZW1zLWNlbnRlciI+CiAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC1zbSB0ZXh0LXNsYXRlLTUwMCBkYXJrOnRleHQtc2xhdGUtNDAwIj57cHJvamVjdC5yb2xlfTwvc3Bhbj4KICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGdhcC0zIj4KICAgICAgICAgICAgICAgICAgICB7cHJvamVjdC5naXRodWJMaW5rICYmICgKICAgICAgICAgICAgICAgICAgICAgIDxhCiAgICAgICAgICAgICAgICAgICAgICAgIGhyZWY9e3Byb2plY3QuZ2l0aHViTGlua30KICAgICAgICAgICAgICAgICAgICAgICAgdGFyZ2V0PSJfYmxhbmsiCiAgICAgICAgICAgICAgICAgICAgICAgIHJlbD0ibm9yZWZlcnJlciIKICAgICAgICAgICAgICAgICAgICAgICAgYXJpYS1sYWJlbD17YCR7cHJvamVjdC50aXRsZX0gR2l0SHViIHJlcG9zaXRvcnlgfQogICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9InRleHQtc2xhdGUtNTAwIGhvdmVyOnRleHQtdGVhbC01MDAgdHJhbnNpdGlvbi1jb2xvcnMiCiAgICAgICAgICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICAgICAgICAgIDxHaXRodWIgY2xhc3NOYW1lPSJoLTQgdy00IiAvPgogICAgICAgICAgICAgICAgICAgICAgPC9hPgogICAgICAgICAgICAgICAgICAgICl9CiAgICAgICAgICAgICAgICAgICAge3Byb2plY3QubGluayAmJiBwcm9qZWN0LmxpbmsgIT09ICIjIiAmJiAoCiAgICAgICAgICAgICAgICAgICAgICA8YQogICAgICAgICAgICAgICAgICAgICAgICBocmVmPXtwcm9qZWN0Lmxpbmt9CiAgICAgICAgICAgICAgICAgICAgICAgIHRhcmdldD0iX2JsYW5rIgogICAgICAgICAgICAgICAgICAgICAgICByZWw9Im5vcmVmZXJyZXIiCiAgICAgICAgICAgICAgICAgICAgICAgIGFyaWEtbGFiZWw9e2Ake3Byb2plY3QudGl0bGV9IGxpdmUgcHJvamVjdGB9CiAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0idGV4dC1zbGF0ZS01MDAgaG92ZXI6dGV4dC10ZWFsLTUwMCB0cmFuc2l0aW9uLWNvbG9ycyIKICAgICAgICAgICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgICAgICAgICAgPEV4dGVybmFsTGluayBjbGFzc05hbWU9ImgtNCB3LTQiIC8+CiAgICAgICAgICAgICAgICAgICAgICA8L2E+CiAgICAgICAgICAgICAgICAgICAgKX0KICAgICAgICAgICAgICAgICAgICA8QnV0dG9uCiAgICAgICAgICAgICAgICAgICAgICB2YXJpYW50PSJnaG9zdCIKICAgICAgICAgICAgICAgICAgICAgIHNpemU9InNtIgogICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJ0ZXh0LXRlYWwtNTAwIGhvdmVyOnRleHQtdGVhbC02MDAgcC0wIGgtYXV0byIKICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHsKICAgICAgICAgICAgICAgICAgICAgICAgc2V0Q3VycmVudEltYWdlSW5kZXgoMCkKICAgICAgICAgICAgICAgICAgICAgICAgc2V0U2VsZWN0ZWRQcm9qZWN0KHByb2plY3QpCiAgICAgICAgICAgICAgICAgICAgICB9fQogICAgICAgICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0ibXItMSI+RGV0YWlsczwvc3Bhbj4KICAgICAgICAgICAgICAgICAgICAgIDxDaGV2cm9uUmlnaHQgY2xhc3NOYW1lPSJoLTQgdy00IiAvPgogICAgICAgICAgICAgICAgICAgIDwvQnV0dG9uPgogICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L21vdGlvbi5kaXY+CiAgICAgICAgICApKX0KICAgICAgICA8L21vdGlvbi5kaXY+CgogICAgICAgIHtzZWxlY3RlZFByb2plY3QgJiYgKAogICAgICAgICAgPG1vdGlvbi5kaXYKICAgICAgICAgICAgaW5pdGlhbD17eyBvcGFjaXR5OiAwIH19CiAgICAgICAgICAgIGFuaW1hdGU9e3sgb3BhY2l0eTogMSB9fQogICAgICAgICAgICBleGl0PXt7IG9wYWNpdHk6IDAgfX0KICAgICAgICAgICAgY2xhc3NOYW1lPSJmaXhlZCBpbnNldC0wIGJnLXNsYXRlLTkwMC84MCB6LTUwIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHAtNCIKICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0U2VsZWN0ZWRQcm9qZWN0KG51bGwpfQogICAgICAgICAgPgogICAgICAgICAgICA8bW90aW9uLmRpdgogICAgICAgICAgICAgIGluaXRpYWw9e3sgc2NhbGU6IDAuOSwgb3BhY2l0eTogMCB9fQogICAgICAgICAgICAgIGFuaW1hdGU9e3sgc2NhbGU6IDEsIG9wYWNpdHk6IDEgfX0KICAgICAgICAgICAgICBleGl0PXt7IHNjYWxlOiAwLjksIG9wYWNpdHk6IDAgfX0KICAgICAgICAgICAgICBjbGFzc05hbWU9ImJnLXdoaXRlIGRhcms6Ymctc2xhdGUtODAwIHJvdW5kZWQtbGcgc2hhZG93LTJ4bCBtYXgtdy0zeGwgdy1mdWxsIG1heC1oLVs5MHZoXSBvdmVyZmxvdy15LWF1dG8iCiAgICAgICAgICAgICAgb25DbGljaz17KGUpID0+IGUuc3RvcFByb3BhZ2F0aW9uKCl9CiAgICAgICAgICAgID4KICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icmVsYXRpdmUgaC02NCBzbTpoLTgwIj4KICAgICAgICAgICAgICAgIDxJbWFnZQogICAgICAgICAgICAgICAgICBzcmM9e3NlbGVjdGVkUHJvamVjdC5pbWFnZXNbY3VycmVudEltYWdlSW5kZXhdIHx8ICIvcGxhY2Vob2xkZXIuc3ZnIn0KICAgICAgICAgICAgICAgICAgYWx0PXtzZWxlY3RlZFByb2plY3QudGl0bGV9CiAgICAgICAgICAgICAgICAgIHdpZHRoPXsxMjAwfQogICAgICAgICAgICAgICAgICBoZWlnaHQ9ezgwMH0KICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJ3LWZ1bGwgaC1mdWxsIG9iamVjdC1jb3ZlciIKICAgICAgICAgICAgICAgIC8+CiAgICAgICAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0iYWJzb2x1dGUgdG9wLTQgcmlnaHQtNCBiZy1yZWQtNTAwIGJhY2tkcm9wLWJsdXItc20gcC0yIHJvdW5kZWQtZnVsbCB0ZXh0LXdoaXRlIGhvdmVyOmJnLXJlZC02MDAgdHJhbnNpdGlvbi1jb2xvcnMiCiAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldFNlbGVjdGVkUHJvamVjdChudWxsKX0KICAgICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgICAgPFggY2xhc3NOYW1lPSJoLTUgdy01IiAvPgogICAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iYWJzb2x1dGUgYm90dG9tLTQgbGVmdC00IHJpZ2h0LTQgZmxleCBqdXN0aWZ5LWJldHdlZW4gaXRlbXMtY2VudGVyIj4KICAgICAgICAgICAgICAgICAgPGJ1dHRvbgogICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0iYmctdGVhbC01MDAgcC0yIHJvdW5kZWQtZnVsbCB0ZXh0LXdoaXRlIGhvdmVyOmJnLXRlYWwtNjAwIHRyYW5zaXRpb24tY29sb3JzIHNoYWRvdy1sZyIKICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXsoZSkgPT4gewogICAgICAgICAgICAgICAgICAgICAgZS5zdG9wUHJvcGFnYXRpb24oKTsKICAgICAgICAgICAgICAgICAgICAgIHNldEN1cnJlbnRJbWFnZUluZGV4KChwcmV2KSA9PiAKICAgICAgICAgICAgICAgICAgICAgICAgcHJldiA9PT0gMCA/IHNlbGVjdGVkUHJvamVjdC5pbWFnZXMubGVuZ3RoIC0gMSA6IHByZXYgLSAxCiAgICAgICAgICAgICAgICAgICAgICApOwogICAgICAgICAgICAgICAgICAgIH19CiAgICAgICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgICAgICA8Q2hldnJvblJpZ2h0IGNsYXNzTmFtZT0iaC01IHctNSByb3RhdGUtMTgwIiAvPgogICAgICAgICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggZ2FwLTIiPgogICAgICAgICAgICAgICAgICAgIHtzZWxlY3RlZFByb2plY3QuaW1hZ2VzLm1hcCgoXywgaW5kZXgpID0+ICgKICAgICAgICAgICAgICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICAgICAgICAgICAga2V5PXtpbmRleH0KICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgdy0yIGgtMiByb3VuZGVkLWZ1bGwgdHJhbnNpdGlvbi1jb2xvcnMgJHsKICAgICAgICAgICAgICAgICAgICAgICAgICBjdXJyZW50SW1hZ2VJbmRleCA9PT0gaW5kZXgKICAgICAgICAgICAgICAgICAgICAgICAgICAgID8gImJnLXdoaXRlIgogICAgICAgICAgICAgICAgICAgICAgICAgICAgOiAiYmctd2hpdGUvNTAgaG92ZXI6Ymctd2hpdGUvNzUiCiAgICAgICAgICAgICAgICAgICAgICAgIH1gfQogICAgICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXsoZSkgPT4gewogICAgICAgICAgICAgICAgICAgICAgICAgIGUuc3RvcFByb3BhZ2F0aW9uKCk7CiAgICAgICAgICAgICAgICAgICAgICAgICAgc2V0Q3VycmVudEltYWdlSW5kZXgoaW5kZXgpOwogICAgICAgICAgICAgICAgICAgICAgICB9fQogICAgICAgICAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICAgICAgICApKX0KICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9ImJnLXRlYWwtNTAwIHAtMiByb3VuZGVkLWZ1bGwgdGV4dC13aGl0ZSBob3ZlcjpiZy10ZWFsLTYwMCB0cmFuc2l0aW9uLWNvbG9ycyBzaGFkb3ctbGciCiAgICAgICAgICAgICAgICAgICAgb25DbGljaz17KGUpID0+IHsKICAgICAgICAgICAgICAgICAgICAgIGUuc3RvcFByb3BhZ2F0aW9uKCk7CiAgICAgICAgICAgICAgICAgICAgICBzZXRDdXJyZW50SW1hZ2VJbmRleCgocHJldikgPT4gCiAgICAgICAgICAgICAgICAgICAgICAgIHByZXYgPT09IHNlbGVjdGVkUHJvamVjdC5pbWFnZXMubGVuZ3RoIC0gMSA/IDAgOiBwcmV2ICsgMQogICAgICAgICAgICAgICAgICAgICAgKTsKICAgICAgICAgICAgICAgICAgICB9fQogICAgICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICAgICAgPENoZXZyb25SaWdodCBjbGFzc05hbWU9ImgtNSB3LTUiIC8+CiAgICAgICAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InAtNiI+CiAgICAgICAgICAgICAgICA8aDMgY2xhc3NOYW1lPSJ0ZXh0LTJ4bCBmb250LWJvbGQgbWItMiB0ZXh0LXNsYXRlLTgwMCBkYXJrOnRleHQtd2hpdGUiPntzZWxlY3RlZFByb2plY3QudGl0bGV9PC9oMz4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGZsZXgtd3JhcCBnYXAtMiBtYi00Ij4KICAgICAgICAgICAgICAgICAge3NlbGVjdGVkUHJvamVjdC50ZWNobm9sb2dpZXMubWFwKCh0ZWNoLCBpbmRleCkgPT4gKAogICAgICAgICAgICAgICAgICAgIDxzcGFuCiAgICAgICAgICAgICAgICAgICAgICBrZXk9e2luZGV4fQogICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJweC0yIHB5LTEgdGV4dC14cyBiZy10ZWFsLTEwMCBkYXJrOmJnLXRlYWwtOTAwLzMwIHRleHQtdGVhbC04MDAgZGFyazp0ZXh0LXRlYWwtMzAwIHJvdW5kZWQtZnVsbCIKICAgICAgICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICAgICAgICB7dGVjaH0KICAgICAgICAgICAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICAgICAgICAgICkpfQogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibWItNCI+CiAgICAgICAgICAgICAgICAgIDxoNCBjbGFzc05hbWU9InRleHQtc20gZm9udC1zZW1pYm9sZCB0ZXh0LXNsYXRlLTUwMCBkYXJrOnRleHQtc2xhdGUtNDAwIG1iLTEiPlJvbGU8L2g0PgogICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc2xhdGUtNzAwIGRhcms6dGV4dC1zbGF0ZS0zMDAiPntzZWxlY3RlZFByb2plY3Qucm9sZX08L3A+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJtYi02Ij4KICAgICAgICAgICAgICAgICAgPGg0IGNsYXNzTmFtZT0idGV4dC1zbSBmb250LXNlbWlib2xkIHRleHQtc2xhdGUtNTAwIGRhcms6dGV4dC1zbGF0ZS00MDAgbWItMSI+RGVzY3JpcHRpb248L2g0PgogICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc2xhdGUtNzAwIGRhcms6dGV4dC1zbGF0ZS0zMDAiPntzZWxlY3RlZFByb2plY3QuZGV0YWlsc308L3A+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGZsZXgtd3JhcCBnYXAtMyI+CiAgICAgICAgICAgICAgICAgIHtzZWxlY3RlZFByb2plY3QuZ2l0aHViTGluayAmJiAoCiAgICAgICAgICAgICAgICAgICAgPEJ1dHRvbiBhc0NoaWxkIGNsYXNzTmFtZT0iYmctc2xhdGUtOTAwIGhvdmVyOmJnLXNsYXRlLTcwMCB0ZXh0LXdoaXRlIj4KICAgICAgICAgICAgICAgICAgICAgIDxhIGhyZWY9e3NlbGVjdGVkUHJvamVjdC5naXRodWJMaW5rfSB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub3JlZmVycmVyIj4KICAgICAgICAgICAgICAgICAgICAgICAgPEdpdGh1YiBjbGFzc05hbWU9ImgtNCB3LTQgbXItMiIgLz4KICAgICAgICAgICAgICAgICAgICAgICAgVmlldyBvbiBHaXRIdWIKICAgICAgICAgICAgICAgICAgICAgIDwvYT4KICAgICAgICAgICAgICAgICAgICA8L0J1dHRvbj4KICAgICAgICAgICAgICAgICAgKX0KICAgICAgICAgICAgICAgICAge3NlbGVjdGVkUHJvamVjdC5saW5rICYmIHNlbGVjdGVkUHJvamVjdC5saW5rICE9PSAiIyIgJiYgKAogICAgICAgICAgICAgICAgICAgIDxCdXR0b24gYXNDaGlsZCB2YXJpYW50PSJvdXRsaW5lIiBjbGFzc05hbWU9ImJvcmRlci10ZWFsLTUwMCB0ZXh0LXRlYWwtNjAwIGhvdmVyOmJnLXRlYWwtNTAgZGFyazpob3ZlcjpiZy10ZWFsLTkwMC8yMCI+CiAgICAgICAgICAgICAgICAgICAgICA8YSBocmVmPXtzZWxlY3RlZFByb2plY3QubGlua30gdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9yZWZlcnJlciI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxFeHRlcm5hbExpbmsgY2xhc3NOYW1lPSJoLTQgdy00IG1yLTIiIC8+CiAgICAgICAgICAgICAgICAgICAgICAgIFBvcnRmb2xpbyBMaW5rCiAgICAgICAgICAgICAgICAgICAgICA8L2E+CiAgICAgICAgICAgICAgICAgICAgPC9CdXR0b24+CiAgICAgICAgICAgICAgICAgICl9CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIHtzZWxlY3RlZFByb2plY3QuZGVtb1ZpZGVvICYmICgKICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTYiPgogICAgICAgICAgICAgICAgICAgIDxoNCBjbGFzc05hbWU9InRleHQtc20gZm9udC1zZW1pYm9sZCB0ZXh0LXNsYXRlLTUwMCBkYXJrOnRleHQtc2xhdGUtNDAwIG1iLTIiPlByb2plY3QgRGVtbzwvaDQ+CiAgICAgICAgICAgICAgICAgICAgPHZpZGVvCiAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9InctZnVsbCByb3VuZGVkLWxnIGJnLXNsYXRlLTk1MCIKICAgICAgICAgICAgICAgICAgICAgIGNvbnRyb2xzCiAgICAgICAgICAgICAgICAgICAgICBwcmVsb2FkPSJtZXRhZGF0YSIKICAgICAgICAgICAgICAgICAgICAgIHBvc3Rlcj17c2VsZWN0ZWRQcm9qZWN0LmltYWdlc1swXX0KICAgICAgICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICAgICAgICA8c291cmNlIHNyYz17c2VsZWN0ZWRQcm9qZWN0LmRlbW9WaWRlb30gdHlwZT0idmlkZW8vbXA0IiAvPgogICAgICAgICAgICAgICAgICAgICAgWW91ciBicm93c2VyIGRvZXMgbm90IHN1cHBvcnQgdGhlIHZpZGVvIHRhZy4KICAgICAgICAgICAgICAgICAgICA8L3ZpZGVvPgogICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICl9CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvbW90aW9uLmRpdj4KICAgICAgICAgIDwvbW90aW9uLmRpdj4KICAgICAgICApfQogICAgICA8L2Rpdj4KICAgIDwvc2VjdGlvbj4KICApCn0K
+"use client"
+
+import { useState } from "react"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { ChevronRight, ExternalLink, Github, X } from "lucide-react"
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  images: string[];
+  technologies: string[];
+  role: string;
+  details: string;
+  link?: string;
+  githubLink?: string;
+  demoVideo?: string;
+}
+
+export default function Projects() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
+
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  const projects: Project[] = [
+    {
+      id: 1,
+      title: "iProsper CRM",
+      description: "A comprehensive CRM system with payment integration and third-party service synchronization.",
+      images: [
+        "/images/i1.png",
+        "/images/i2.png",
+        "/images/i3.png",
+        "/images/i4.png",
+        "/images/i5.png",
+      ],
+      technologies: ["PHP", "Cervo", "React JS", "MySQL"],
+      role: "Full Stack Developer",
+      details: "Integrated Stripe and PayPal for seamless transactions, and synchronized data with Google and Microsoft services. Implemented user authentication, role-based access control, and real-time notifications. The system includes contact management, sales pipeline tracking, email integration, and comprehensive reporting dashboards.",
+      link: "#",
+    },
+    {
+      id: 2,
+      title: "KeyConnect CRM",
+      description: "A CRM system tailored for call center solutions, built with Laravel, Vue.js, MySQL, and Elasticsearch.",
+      images: [
+        "/images/crm1.jpg",
+        "/images/crm2.jpg",
+        "/images/crm3.jpg",
+        "/images/crm4.jpg",
+        "/images/crm5.jpg",
+        "/images/crm6.jpg",
+      ],
+      technologies: ["Laravel", "MySQL", "Ajax", "Blade", "VueJS", "Elasticsearch"],
+      role: "Full Stack Developer",
+      details: "Contributed as a senior full stack developer to the development of a comprehensive CRM system tailored for call center operations. The platform incorporates VoIP and SIP integration to facilitate efficient communication and call handling. Utilized Laravel for building robust backend services, Vue.js and Blade with AJAX for creating responsive and dynamic user interfaces, and Elasticsearch for high-performance real-time search capabilities.",
+      link: "#",
+    },
+    {
+      id: 3,
+      title: "Ting - Event Management System",
+      description: "An event management system with NFC technology integration.",
+      images: [
+        "/images/t1.png",
+        "/images/t2.png",
+        "/images/t3.png",
+        "/images/t4.png",
+        "/images/t5.png",
+        "/images/t6.png",
+        "/images/t7.png",
+        "/images/t8.png",
+        "/images/t9.png",
+        "/images/t10.png",
+      ],
+      technologies: ["Laravel", "MySQL", "NFC Technology"],
+      role: "Backend Developer",
+      details: "Led the development of an event management system integrating NFC technology for seamless attendance tracking and user management. Implemented features like event creation, ticket sales, attendee management, and reporting. The system supports multiple event types, custom registration forms, and real-time analytics for event organizers.",
+      link: "#",
+    },
+    {
+      "id": 4,
+      "title": "Capex BNU",
+      "description": "A comprehensive management system developed for Beaconhouse National University and its affiliated schools, focusing on staff budgeting, inventory tracking, and accounts management.",
+      "images": [
+        "/images/b1.jpg",
+        "/images/b2.jpg",
+        "/images/b3.jpg",
+      ],
+      "technologies": ["Core PHP", "JavaScript", "Oracle"],
+      "role": "Software Engineer",
+      "details": "Worked on the budgeting, accounts, and inventory modules as a Software Engineer. Responsibilities included developing and maintaining modules to streamline financial planning, procurement workflows, and stock management. Utilized Core PHP for backend development, JavaScript for client-side interactions, and Oracle for database management to ensure system reliability and efficiency across the university's operations.",
+      "link": "#"
+    },    
+    {
+      id: 5,
+      title: "Jane Bond BBQ",
+      description: "Square Point API integration for a restaurant management system.",
+      images: [
+        "/images/j1.jpg",
+        "/images/j2.jpg",
+        "/images/j3.jpg",
+        "/images/j4.jpg",
+      ],
+      technologies: ["React JS", "Square API"],
+      role: "Frontend Developer",
+      details: "Integrated Square Point APIs to enhance the functionality of a restaurant management system. Implemented features like payment processing, inventory management, and sales reporting. The system provides real-time sales analytics, employee management, and customer relationship tools specifically designed for BBQ restaurants.",
+      link: "#",
+    },
+    {
+      id: 6,
+      title: "MineIQ",
+      description: "A comprehensive mine management system with ticket-based workflow.",
+      images: [
+        "/images/mi1.png",
+        "/images/mi2.png",
+        "/images/mi3.png",
+        "/images/mi4.png",
+      ],
+      technologies: ["React JS", "Laravel", "MySQL"],
+      role: "Full-Stack Developer",
+      details: "Developed a comprehensive mine management system, implementing a ticket-based workflow for task tracking and team management. Implemented features like resource allocation, progress monitoring, and reporting. The system includes safety compliance tracking, equipment maintenance scheduling, and production analytics for mining operations.",
+      link: "#",
+    },
+    {
+      id: 7,
+      title: "RetailPulse",
+      description: "A multi-tenant retail POS SaaS for product catalogues, inventory, sales, purchasing, branches, and operations.",
+      images: ["/videos/retailpulse-poster.jpg"],
+      technologies: ["Laravel 13", "React", "Inertia", "MySQL", "Redis", "Docker"],
+      role: "Full-Stack Developer",
+      details: "Designed and developed a scalable, multi-tenant point-of-sale platform for mid-sized retailers. RetailPulse includes branch-aware access control, product and catalogue management, inventory and warehouse operations, POS checkout, sales, suppliers, purchase orders, goods receipts, stock transfers, accounting journals, real-time updates, queued imports, and deployment-ready Docker infrastructure.",
+      link: "https://mohammad-arslan.netlify.app/#projects",
+      githubLink: "https://github.com/Mohammad-Arslan/retailpulse",
+      demoVideo: "/videos/retailpulse.mp4",
+    },
+  ]
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5 },
+    },
+  }
+
+  return (
+    <section id="projects" className="py-20 bg-white dark:bg-slate-800">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -20 }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-bold text-slate-800 dark:text-white"
+          >
+            Featured Projects
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, width: 0 }}
+            animate={{ opacity: inView ? 1 : 0, width: inView ? "120px" : 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="h-1 bg-teal-500 mx-auto mt-2 mb-4"
+          ></motion.div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: inView ? 1 : 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto"
+          >
+            Selected enterprise products across CRM, operations, events and commerce
+          </motion.p>
+        </div>
+
+        <motion.div
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {projects.map((project) => (
+            <motion.div
+              key={project.id}
+              variants={itemVariants}
+              className="bg-white dark:bg-slate-700 rounded-lg shadow-lg overflow-hidden border border-slate-100 dark:border-slate-600 group hover:shadow-xl transition-shadow duration-300"
+              whileHover={{ y: -5 }}
+            >
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src={project.images[0] || "/placeholder.svg"}
+                  alt={project.title}
+                  width={1200}
+                  height={800}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+                    onClick={() => {
+                      setCurrentImageIndex(0)
+                      setSelectedProject(project)
+                    }}
+                  >
+                    View Details
+                  </Button>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">{project.title}</h3>
+                <p className="text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="px-2 py-1 text-xs bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-300 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-slate-500 dark:text-slate-400">{project.role}</span>
+                  <div className="flex items-center gap-3">
+                    {project.githubLink && (
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${project.title} GitHub repository`}
+                        className="text-slate-500 hover:text-teal-500 transition-colors"
+                      >
+                        <Github className="h-4 w-4" />
+                      </a>
+                    )}
+                    {project.link && project.link !== "#" && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${project.title} live project`}
+                        className="text-slate-500 hover:text-teal-500 transition-colors"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    )}
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="text-teal-500 hover:text-teal-600 p-0 h-auto"
+                      onClick={() => {
+                        setCurrentImageIndex(0)
+                        setSelectedProject(project)
+                      }}
+                    >
+                      <span className="mr-1">Details</span>
+                      <ChevronRight className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-slate-900/80 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedProject(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-white dark:bg-slate-800 rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative h-64 sm:h-80">
+                <Image
+                  src={selectedProject.images[currentImageIndex] || "/placeholder.svg"}
+                  alt={selectedProject.title}
+                  width={1200}
+                  height={800}
+                  className="w-full h-full object-cover"
+                />
+                <button
+                  className="absolute top-4 right-4 bg-red-500 backdrop-blur-sm p-2 rounded-full text-white hover:bg-red-600 transition-colors"
+                  onClick={() => setSelectedProject(null)}
+                >
+                  <X className="h-5 w-5" />
+                </button>
+                <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+                  <button
+                    className="bg-teal-500 p-2 rounded-full text-white hover:bg-teal-600 transition-colors shadow-lg"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentImageIndex((prev) => 
+                        prev === 0 ? selectedProject.images.length - 1 : prev - 1
+                      );
+                    }}
+                  >
+                    <ChevronRight className="h-5 w-5 rotate-180" />
+                  </button>
+                  <div className="flex gap-2">
+                    {selectedProject.images.map((_, index) => (
+                      <button
+                        key={index}
+                        className={`w-2 h-2 rounded-full transition-colors ${
+                          currentImageIndex === index
+                            ? "bg-white"
+                            : "bg-white/50 hover:bg-white/75"
+                        }`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setCurrentImageIndex(index);
+                        }}
+                      />
+                    ))}
+                  </div>
+                  <button
+                    className="bg-teal-500 p-2 rounded-full text-white hover:bg-teal-600 transition-colors shadow-lg"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentImageIndex((prev) => 
+                        prev === selectedProject.images.length - 1 ? 0 : prev + 1
+                      );
+                    }}
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-2 text-slate-800 dark:text-white">{selectedProject.title}</h3>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {selectedProject.technologies.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="px-2 py-1 text-xs bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-300 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-1">Role</h4>
+                  <p className="text-slate-700 dark:text-slate-300">{selectedProject.role}</p>
+                </div>
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-1">Description</h4>
+                  <p className="text-slate-700 dark:text-slate-300">{selectedProject.details}</p>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {selectedProject.githubLink && (
+                    <Button asChild className="bg-slate-900 hover:bg-slate-700 text-white">
+                      <a href={selectedProject.githubLink} target="_blank" rel="noreferrer">
+                        <Github className="h-4 w-4 mr-2" />
+                        View on GitHub
+                      </a>
+                    </Button>
+                  )}
+                  {selectedProject.link && selectedProject.link !== "#" && (
+                    <Button asChild variant="outline" className="border-teal-500 text-teal-600 hover:bg-teal-50 dark:hover:bg-teal-900/20">
+                      <a href={selectedProject.link} target="_blank" rel="noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        Portfolio Link
+                      </a>
+                    </Button>
+                  )}
+                </div>
+                {selectedProject.demoVideo && (
+                  <div className="mt-6">
+                    <h4 className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">Project Demo</h4>
+                    <video
+                      className="w-full rounded-lg bg-slate-950"
+                      controls
+                      preload="metadata"
+                      poster={selectedProject.images[0]}
+                    >
+                      <source src={selectedProject.demoVideo} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </div>
+    </section>
+  )
+}
