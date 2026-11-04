@@ -12,28 +12,30 @@ export default function Experience() {
 
   const experiences = [
     {
-      title: "Sr. Software Engineer",
+      title: "Senior Software Engineer",
       company: "Beaconhouse Technology",
       location: "Lahore",
       period: "June 2025 - Present",
       description: [
-        "United Charter School (UCS) ERP: Solely managing and developing the UCS ERP system at Beaconhouse Technology. This comprehensive school management platform streamlines academic, administrative, and operational workflows. Responsible for full-stack development, including module enhancements, performance optimization, and system scalability using modern web technologies.",
-        "Beam360 Platform: Contributing to Beam360, a large-scale education technology platform that integrates CRM, CMS, SIS, and LMS functionalities. Working primarily on the MERN stack, in collaboration with Python-based microservices. Played a key role in the development and maintenance of the LMS (Learning Management System) module, ensuring robust content delivery, user management, and interactive learning features across the platform.",
+        "Supernova SIS: Develop PHP/Laravel and React features for a multi-branch school ERP serving 10,000+ students, covering fee billing, payments, accounting, payroll and attendance workflows.",
+        "Investigate and resolve billing and payment consistency issues, including carry-forward balances, payment reversals and journal-entry workflows. Add regression coverage for financial edge cases.",
+        "Harden concurrent billing and payment imports through transaction handling, per-student locking, duplicate-processing safeguards and queue dispatch after commit.",
+        "Own development of the United Charter School (UCS) ERP and contribute frontend features to Beams360, a separate MERN-based platform with Python microservices, including LMS, gradebook and assessment reporting.",
       ],
     },
     {
-      title: "Sr. Software Engineer",
+      title: "Senior Software Engineer",
       company: "Back Bone Technology",
       location: "Lahore",
       period: "July 2024 - June 2025",
       description: [
-        "CRM: Contributing as a full-stack developer to a robust CRM platform tailored for call center operations, utilizing Laravel, Vue.js, MySQL, and Elasticsearch.",
-        "Content Management System (CMS): Contributing as a full-stack developer to a scalable and high-performance CMS built with Laravel, Vue.js, MySQL, Redis, and Elasticsearch, ensuring seamless content workflows and system reliability.",
-        "Customer Service & Relationship (CSR) Portal: Spearheading backend and frontend enhancements for a comprehensive CSR portal designed for efficient customer support and engagement, leveraging Laravel, Vue.js, MySQL, Redis, and Elasticsearch.",
+        "Built call-center CRM features with Laravel, Vue.js, MySQL and Elasticsearch, including VoIP/SIP integrations and real-time search.",
+        "Developed CMS workflows using Laravel, Vue.js, MySQL, Redis and Elasticsearch, maintaining content delivery and search functionality.",
+        "Delivered backend and frontend enhancements to a customer-service portal, translating support requirements into operational workflows.",
       ],
     },
     {
-      title: "Sr. Software Engineer",
+      title: "Senior Software Engineer",
       company: "Softpers Interactive",
       location: "Lahore",
       period: "Jul 2023 - Jul 2024",
@@ -111,7 +113,7 @@ export default function Experience() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto"
           >
-            Nearly six years building and modernizing business-critical platforms
+            Building and modernizing business-critical platforms since December 2020
           </motion.p>
         </div>
 

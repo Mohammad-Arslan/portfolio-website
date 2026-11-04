@@ -5,7 +5,8 @@ import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ChevronRight, ExternalLink, Github, X } from "lucide-react"
+import { ChevronRight, Layers3 } from "lucide-react"
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog"
 
 interface Project {
   id: number;
@@ -15,8 +16,7 @@ interface Project {
   technologies: string[];
   role: string;
   details: string;
-  link?: string;
-  githubLink?: string;
+  contributions?: string[];
   demoVideo?: string;
 }
 
@@ -31,6 +31,20 @@ export default function Projects() {
 
   const projects: Project[] = [
     {
+      id: 8,
+      title: "Supernova SIS",
+      description: "A multi-branch school ERP serving 10,000+ students, with billing, payments, accounting and payroll workflows.",
+      images: [],
+      technologies: ["PHP", "Laravel", "React", "MySQL", "Queues"],
+      role: "Senior Software Engineer · Beaconhouse Technology",
+      details: "Develop and maintain business-critical modules in a school ERP. My work focuses on accurate financial workflows, reliable background processing and safe changes to production systems. This overview describes my engineering contribution without exposing client data or administrative access.",
+      contributions: [
+        "Investigated billing, concession and carry-forward discrepancies across challans, payments and journal entries.",
+        "Added transaction handling, per-student locking and duplicate-processing safeguards for concurrent billing and payment imports.",
+        "Moved dependent job dispatches after transaction commit and added regression coverage for financial edge cases.",
+      ],
+    },
+    {
       id: 1,
       title: "iProsper CRM",
       description: "A comprehensive CRM system with payment integration and third-party service synchronization.",
@@ -44,7 +58,7 @@ export default function Projects() {
       technologies: ["PHP", "Cervo", "React JS", "MySQL"],
       role: "Full Stack Developer",
       details: "Integrated Stripe and PayPal for seamless transactions, and synchronized data with Google and Microsoft services. Implemented user authentication, role-based access control, and real-time notifications. The system includes contact management, sales pipeline tracking, email integration, and comprehensive reporting dashboards.",
-      link: "#",
+
     },
     {
       id: 2,
@@ -61,7 +75,7 @@ export default function Projects() {
       technologies: ["Laravel", "MySQL", "Ajax", "Blade", "VueJS", "Elasticsearch"],
       role: "Full Stack Developer",
       details: "Contributed as a senior full stack developer to the development of a comprehensive CRM system tailored for call center operations. The platform incorporates VoIP and SIP integration to facilitate efficient communication and call handling. Utilized Laravel for building robust backend services, Vue.js and Blade with AJAX for creating responsive and dynamic user interfaces, and Elasticsearch for high-performance real-time search capabilities.",
-      link: "#",
+
     },
     {
       id: 3,
@@ -82,7 +96,7 @@ export default function Projects() {
       technologies: ["Laravel", "MySQL", "NFC Technology"],
       role: "Backend Developer",
       details: "Led the development of an event management system integrating NFC technology for seamless attendance tracking and user management. Implemented features like event creation, ticket sales, attendee management, and reporting. The system supports multiple event types, custom registration forms, and real-time analytics for event organizers.",
-      link: "#",
+
     },
     {
       "id": 4,
@@ -96,7 +110,7 @@ export default function Projects() {
       "technologies": ["Core PHP", "JavaScript", "Oracle"],
       "role": "Software Engineer",
       "details": "Worked on the budgeting, accounts, and inventory modules as a Software Engineer. Responsibilities included developing and maintaining modules to streamline financial planning, procurement workflows, and stock management. Utilized Core PHP for backend development, JavaScript for client-side interactions, and Oracle for database management to ensure system reliability and efficiency across the university's operations.",
-      "link": "#"
+
     },    
     {
       id: 5,
@@ -111,7 +125,7 @@ export default function Projects() {
       technologies: ["React JS", "Square API"],
       role: "Frontend Developer",
       details: "Integrated Square Point APIs to enhance the functionality of a restaurant management system. Implemented features like payment processing, inventory management, and sales reporting. The system provides real-time sales analytics, employee management, and customer relationship tools specifically designed for BBQ restaurants.",
-      link: "#",
+
     },
     {
       id: 6,
@@ -126,21 +140,28 @@ export default function Projects() {
       technologies: ["React JS", "Laravel", "MySQL"],
       role: "Full-Stack Developer",
       details: "Developed a comprehensive mine management system, implementing a ticket-based workflow for task tracking and team management. Implemented features like resource allocation, progress monitoring, and reporting. The system includes safety compliance tracking, equipment maintenance scheduling, and production analytics for mining operations.",
-      link: "#",
+
     },
     {
       id: 7,
       title: "RetailPulse",
-      description: "A multi-tenant retail POS SaaS for product catalogues, inventory, sales, purchasing, branches, and operations.",
+      description: "A retail ERP and POS SaaS with branch-aware access, accounting, inventory and queued imports.",
       images: ["/videos/retailpulse-poster.jpg"],
       technologies: ["Laravel 13", "React", "Inertia", "MySQL", "Redis", "Docker"],
-      role: "Full-Stack Developer",
-      details: "Designed and developed a scalable, multi-tenant point-of-sale platform for mid-sized retailers. RetailPulse includes branch-aware access control, product and catalogue management, inventory and warehouse operations, POS checkout, sales, suppliers, purchase orders, goods receipts, stock transfers, accounting journals, real-time updates, queued imports, and deployment-ready Docker infrastructure.",
-      link: "https://mohammad-arslan.netlify.app/#projects",
-      githubLink: "https://github.com/Mohammad-Arslan/retailpulse",
+      role: "Founder & Sole Developer",
+      details: "Own product requirements, architecture, implementation and deployment of a multi-tenant retail platform. Built as a modular monolith with workflows spanning POS, purchasing, accounting, HR/payroll, inventory and fixed assets.",
+      contributions: [
+        "Designed branch-aware authorization and approval workflows across business modules.",
+        "Built a streaming import/export engine with separate validation and processing stages, alongside queued jobs and real-time updates using Laravel Reverb.",
+        "Implemented accounting journal workflows and configured Docker-based deployment on a Contabo VPS with Nginx, Laravel Octane and Horizon.",
+      ],
       demoVideo: "/videos/retailpulse.mp4",
     },
-  ]
+  ].sort((a, b) => {
+    const priority = [7, 8]
+    const rank = (id: number) => priority.includes(id) ? priority.indexOf(id) : id + 2
+    return rank(a.id) - rank(b.id)
+  })
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -185,9 +206,13 @@ export default function Projects() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto"
           >
-            Selected enterprise products across CRM, operations, events and commerce
+            Selected SaaS and ERP work, followed by client projects across CRM, operations, events and commerce.
           </motion.p>
         </div>
+
+        <p className="mx-auto mb-10 max-w-3xl text-center text-sm leading-6 text-slate-500 dark:text-slate-400">
+          Explore screenshots, project overviews and a recorded RetailPulse walkthrough. Source code and client admin access remain private.
+        </p>
 
         <motion.div
           ref={ref}
@@ -204,13 +229,21 @@ export default function Projects() {
               whileHover={{ y: -5 }}
             >
               <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={project.images[0] || "/placeholder.svg"}
-                  alt={project.title}
-                  width={1200}
-                  height={800}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                {project.images.length > 0 ? (
+                  <Image
+                    src={project.images[0]}
+                    alt={`${project.title} screenshot`}
+                    width={1200}
+                    height={800}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                ) : (
+                  <div className="flex h-full flex-col justify-center bg-slate-900 px-6 text-white">
+                    <Layers3 className="mb-3 h-8 w-8 text-teal-400" />
+                    <p className="text-xs uppercase tracking-widest text-teal-300">Engineering case study</p>
+                    <p className="mt-2 text-xl font-semibold">School billing &amp; operations</p>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                   <Button
@@ -229,6 +262,9 @@ export default function Projects() {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">{project.title}</h3>
                 <p className="text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">{project.description}</p>
+                <p className="mb-4 text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                  {project.demoVideo ? "Screenshots & recorded walkthrough" : project.images.length ? "Screenshot gallery" : "Project overview"}
+                </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, index) => (
                     <span
@@ -239,31 +275,9 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="flex flex-wrap justify-between items-center gap-3">
                   <span className="text-sm text-slate-500 dark:text-slate-400">{project.role}</span>
                   <div className="flex items-center gap-3">
-                    {project.githubLink && (
-                      <a
-                        href={project.githubLink}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`${project.title} GitHub repository`}
-                        className="text-slate-500 hover:text-teal-500 transition-colors"
-                      >
-                        <Github className="h-4 w-4" />
-                      </a>
-                    )}
-                    {project.link && project.link !== "#" && (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`${project.title} live project`}
-                        className="text-slate-500 hover:text-teal-500 transition-colors"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
-                    )}
                     <Button
                       variant="ghost"
                       size="sm"
@@ -283,132 +297,68 @@ export default function Projects() {
           ))}
         </motion.div>
 
-        {selectedProject && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-slate-900/80 z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedProject(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-white dark:bg-slate-800 rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="relative h-64 sm:h-80">
-                <Image
-                  src={selectedProject.images[currentImageIndex] || "/placeholder.svg"}
-                  alt={selectedProject.title}
-                  width={1200}
-                  height={800}
-                  className="w-full h-full object-cover"
-                />
-                <button
-                  className="absolute top-4 right-4 bg-red-500 backdrop-blur-sm p-2 rounded-full text-white hover:bg-red-600 transition-colors"
-                  onClick={() => setSelectedProject(null)}
-                >
-                  <X className="h-5 w-5" />
-                </button>
-                <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
-                  <button
-                    className="bg-teal-500 p-2 rounded-full text-white hover:bg-teal-600 transition-colors shadow-lg"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setCurrentImageIndex((prev) => 
-                        prev === 0 ? selectedProject.images.length - 1 : prev - 1
-                      );
-                    }}
-                  >
-                    <ChevronRight className="h-5 w-5 rotate-180" />
-                  </button>
-                  <div className="flex gap-2">
-                    {selectedProject.images.map((_, index) => (
-                      <button
-                        key={index}
-                        className={`w-2 h-2 rounded-full transition-colors ${
-                          currentImageIndex === index
-                            ? "bg-white"
-                            : "bg-white/50 hover:bg-white/75"
-                        }`}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setCurrentImageIndex(index);
-                        }}
-                      />
-                    ))}
-                  </div>
-                  <button
-                    className="bg-teal-500 p-2 rounded-full text-white hover:bg-teal-600 transition-colors shadow-lg"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setCurrentImageIndex((prev) => 
-                        prev === selectedProject.images.length - 1 ? 0 : prev + 1
-                      );
-                    }}
-                  >
-                    <ChevronRight className="h-5 w-5" />
-                  </button>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2 text-slate-800 dark:text-white">{selectedProject.title}</h3>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {selectedProject.technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-2 py-1 text-xs bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-300 rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-1">Role</h4>
-                  <p className="text-slate-700 dark:text-slate-300">{selectedProject.role}</p>
-                </div>
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-1">Description</h4>
-                  <p className="text-slate-700 dark:text-slate-300">{selectedProject.details}</p>
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  {selectedProject.githubLink && (
-                    <Button asChild className="bg-slate-900 hover:bg-slate-700 text-white">
-                      <a href={selectedProject.githubLink} target="_blank" rel="noreferrer">
-                        <Github className="h-4 w-4 mr-2" />
-                        View on GitHub
-                      </a>
-                    </Button>
+        <Dialog open={selectedProject !== null} onOpenChange={(open) => { if (!open) setSelectedProject(null) }}>
+          {selectedProject && (
+            <DialogContent className="max-h-[90vh] max-w-3xl overflow-y-auto bg-white p-6 text-slate-800 dark:bg-slate-800 dark:text-white">
+              <DialogTitle className="pr-8 text-2xl leading-tight">{selectedProject.title}</DialogTitle>
+              <DialogDescription>{selectedProject.description}</DialogDescription>
+              {selectedProject.images.length > 0 && (
+                <figure>
+                  <Image
+                    src={selectedProject.images[currentImageIndex]}
+                    alt={`${selectedProject.title} screenshot ${currentImageIndex + 1} of ${selectedProject.images.length}`}
+                    width={1200}
+                    height={800}
+                    className="max-h-[50vh] w-full rounded-md bg-slate-100 object-contain dark:bg-slate-900"
+                  />
+                  <figcaption className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                    Screenshot {currentImageIndex + 1} of {selectedProject.images.length}
+                  </figcaption>
+                  {selectedProject.images.length > 1 && (
+                    <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
+                      <Button variant="outline" aria-label="Previous screenshot" onClick={() => setCurrentImageIndex((index) => (index - 1 + selectedProject.images.length) % selectedProject.images.length)}>
+                        Previous
+                      </Button>
+                      <Button variant="outline" aria-label="Next screenshot" onClick={() => setCurrentImageIndex((index) => (index + 1) % selectedProject.images.length)}>
+                        Next
+                      </Button>
+                    </div>
                   )}
-                  {selectedProject.link && selectedProject.link !== "#" && (
-                    <Button asChild variant="outline" className="border-teal-500 text-teal-600 hover:bg-teal-50 dark:hover:bg-teal-900/20">
-                      <a href={selectedProject.link} target="_blank" rel="noreferrer">
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Portfolio Link
-                      </a>
-                    </Button>
-                  )}
-                </div>
-                {selectedProject.demoVideo && (
-                  <div className="mt-6">
-                    <h4 className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">Project Demo</h4>
-                    <video
-                      className="w-full rounded-lg bg-slate-950"
-                      controls
-                      preload="metadata"
-                      poster={selectedProject.images[0]}
-                    >
-                      <source src={selectedProject.demoVideo} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                )}
+                </figure>
+              )}
+              <div className="flex flex-wrap gap-2">
+                {selectedProject.technologies.map((tech) => (
+                  <span key={tech} className="rounded-full bg-teal-100 px-2 py-1 text-xs text-teal-800 dark:bg-teal-900/30 dark:text-teal-300">{tech}</span>
+                ))}
               </div>
-            </motion.div>
-          </motion.div>
-        )}
+              <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{selectedProject.role}</p>
+              <p className="leading-7 text-slate-700 dark:text-slate-300">{selectedProject.details}</p>
+              {selectedProject.contributions && (
+                <div>
+                  <h4 className="mb-3 font-semibold">Engineering contribution</h4>
+                  <ul className="list-disc space-y-2 pl-5 leading-7 text-slate-700 dark:text-slate-300">
+                    {selectedProject.contributions.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                </div>
+              )}
+              {selectedProject.demoVideo && (
+                <div>
+                  <h4 className="mb-2 font-semibold">Recorded walkthrough</h4>
+                  <video className="w-full rounded-lg bg-slate-950" controls preload="none" poster={selectedProject.images[0]}>
+                    <source src={selectedProject.demoVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              )}
+              <p className="border-t border-slate-200 pt-4 text-sm leading-6 text-slate-500 dark:border-slate-700 dark:text-slate-400">
+                {selectedProject.title === "RetailPulse"
+                  ? "Privately developed product. The screenshots and recording show the application without providing source code or a public login."
+                  : "Client project. Administrative access and source code are private; this portfolio presents only the project overview and available screenshots."}
+              </p>
+            </DialogContent>
+          )}
+        </Dialog>
+
       </div>
     </section>
   )

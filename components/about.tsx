@@ -70,7 +70,7 @@ export default function About() {
 
             <p className="text-slate-600 dark:text-slate-300 mb-6">
               I take ownership across discovery, database and API design, implementation, integrations, performance,
-              testing and deployment. I work comfortably with distributed teams and communicate technical trade-offs
+              testing and deployment on AWS and VPS platforms including Linode, Contabo and Hostinger. I work comfortably with distributed teams and communicate technical trade-offs
               in clear business language.
             </p>
 

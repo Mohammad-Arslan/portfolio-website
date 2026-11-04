@@ -30,14 +30,14 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-teal-400/25 bg-teal-400/10 px-4 py-2 text-sm text-teal-200"><Radio className="h-4 w-4" /> Open to remote and relocation opportunities</div>
-            <p className="mb-4 font-mono text-sm uppercase tracking-[.22em] text-teal-400">Senior Full-Stack Engineer</p>
+            <p className="mb-4 font-mono text-sm uppercase tracking-[.22em] text-teal-400">Senior Full-Stack Engineer · PHP / Laravel &amp; React</p>
             <h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-.045em] md:text-7xl">
               I build dependable <span className="text-teal-400">SaaS and ERP systems</span> that scale.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
-              Mohammad Arslan — nearly six years delivering PHP/Laravel backends, React experiences, REST APIs, data-heavy workflows and enterprise integrations.
+              Mohammad Arslan — building production web applications since December 2020. I develop Laravel backends, React interfaces and reliable billing, payment and operational workflows.
             </p>
-            <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-400"><span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-teal-400" /> Lahore, Pakistan</span><span>Remote: US · UK · UAE · KSA</span><span>On-site: UAE · KSA</span></div>
+            <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-400"><span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-teal-400" /> Lahore, Pakistan</span><span>Remote: worldwide</span><span>Relocation: Germany · Austria · UK · Gulf</span></div>
             <div className="mt-9 flex flex-col sm:flex-row gap-4">
               <Button
                 className="bg-gradient-to-r from-teal-500 to-teal-700 hover:from-teal-600 hover:to-teal-800 text-white px-6 py-2 rounded-md"
