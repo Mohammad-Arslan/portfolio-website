@@ -5,12 +5,12 @@ import { useInView } from "react-intersection-observer"
 import { Braces, Database, Layers3, PlugZap, ServerCog, Workflow } from "lucide-react"
 
 const expertise = [
-  { icon: ServerCog, title: "Backend & architecture", text: "Production-grade Laravel and PHP systems with clean domain boundaries, queues, caching and maintainable service layers.", skills: ["PHP", "Laravel", "REST APIs", "Queues", "Redis"] },
-  { icon: Braces, title: "Frontend applications", text: "Responsive product interfaces for complex workflows, dashboards and role-based platforms.", skills: ["React", "Next.js", "Vue.js", "JavaScript", "Inertia.js"] },
+  { icon: ServerCog, title: "Backend & architecture", text: "Production-grade Laravel and PHP systems with clean domain boundaries, queues, caching and maintainable service layers.", skills: ["PHP", "Laravel", "REST APIs", "Queues", "Redis", "Transactions"] },
+  { icon: Braces, title: "Frontend applications", text: "Responsive product interfaces for complex workflows, dashboards and role-based platforms.", skills: ["React", "TypeScript", "Next.js", "Vue.js", "Inertia.js"] },
   { icon: Database, title: "Data & search", text: "Relational modelling, query optimization and fast search for operational, reporting and content-heavy systems.", skills: ["MySQL", "SQL Server", "Oracle", "MongoDB", "Elasticsearch"] },
   { icon: Layers3, title: "Business platforms", text: "Hands-on delivery across SaaS, ERP, CRM, CMS, LMS and multi-role enterprise workflows.", skills: ["SaaS", "ERP", "CRM", "CMS", "LMS"] },
   { icon: PlugZap, title: "Integrations", text: "Reliable payments, communications and third-party services designed around failure handling and data consistency.", skills: ["Stripe", "PayPal", "Square", "Google APIs", "Twilio"] },
-  { icon: Workflow, title: "Delivery & operations", text: "Pragmatic engineering practices from testing and performance tuning through containerized deployment.", skills: ["Docker", "Git", "Testing", "Performance", "CI/CD"] },
+  { icon: Workflow, title: "Cloud & deployment", text: "Hands-on application deployment on AWS, Linode, Contabo and Hostinger, with Docker, Linux, Nginx, queue workers and CI/CD workflows.", skills: ["AWS", "Linode", "Contabo", "Hostinger", "Docker", "Linux", "Nginx", "CI/CD"] },
 ]
 
 export default function Skills() {
@@ -21,7 +21,7 @@ export default function Skills() {
         <div className="mb-14 max-w-3xl">
           <p className="mb-3 font-mono text-sm uppercase tracking-[.2em] text-teal-400">Technical expertise</p>
           <h2 className="text-4xl font-semibold tracking-tight md:text-5xl">A senior toolkit, organized around outcomes.</h2>
-          <p className="mt-5 text-lg leading-8 text-slate-400">No arbitrary proficiency scores—just the technologies and system types I use to ship dependable products.</p>
+          <p className="mt-5 text-lg leading-8 text-slate-400">PHP/Laravel and React at the core, supported by database design, production debugging, automated testing and hands-on deployment.</p>
         </div>
         <motion.div ref={ref} initial="hidden" animate={inView ? "visible" : "hidden"} variants={{ hidden: {}, visible: { transition: { staggerChildren: .08 } } }} className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-3">
           {expertise.map(({ icon: Icon, title, text, skills }) => (
